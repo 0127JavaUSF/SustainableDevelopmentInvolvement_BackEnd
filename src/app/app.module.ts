@@ -20,6 +20,7 @@ import { BeefTacosComponent } from './components/food/beef-tacos/beef-tacos.comp
 import { PokeComponent } from './components/poke/poke.component';
 import { PokeService } from 'src/app/services/poke.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     FishTacosComponent,
     BeefTacosComponent,
     PokeComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
