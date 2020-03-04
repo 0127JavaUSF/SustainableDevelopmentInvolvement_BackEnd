@@ -1,0 +1,8 @@
+<img [src]="pokeData.imgSrc">
+<h2>#{{ pokeData.id }} - {{ pokeData.name }}</h2>
+<input 
+    type="text" 
+    name="pokemon-input"
+    [(ngModel)]="pokeInput"
+>
+<button (click)="search()">Search</button>
