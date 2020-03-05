@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,7 +19,10 @@ import { BeefTacosComponent } from './components/food/beef-tacos/beef-tacos.comp
 import { PokeComponent } from './components/poke/poke.component';
 import { PokeService } from 'src/app/services/poke.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { CaroselComponent } from './components/carosel/carosel.component';
 import { SearchComponent } from './components/search/search.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,8 @@ import { SearchComponent } from './components/search/search.component';
     FishTacosComponent,
     BeefTacosComponent,
     PokeComponent,
+    LoginComponent,
+    CaroselComponent,
     SearchComponent,
   ],
   imports: [
