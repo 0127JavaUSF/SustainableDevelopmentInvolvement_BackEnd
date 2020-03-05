@@ -21,6 +21,10 @@ import { PokeComponent } from './components/poke/poke.component';
 import { PokeService } from 'src/app/services/poke.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
+import { ListingComponent } from './components/listing/listing.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SharedService } from './services/shared.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,16 +42,18 @@ import { SearchComponent } from './components/search/search.component';
     BeefTacosComponent,
     PokeComponent,
     SearchComponent,
+    ListingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
   ],
 
   // providers can be used to register services
-  providers: [ FoodService, PokeService ],
+  providers: [ FoodService, PokeService, SharedService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
