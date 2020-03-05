@@ -1,0 +1,33 @@
+<p>{{test}}</p>
+
+<div class="form-group mx-auto w-50">
+    <label for="type_select">Select the type of pet:</label>
+    <select id="type_select" class="form-control" [(ngModel)]="selectedType" (change)="onTypeSelected(event)">
+        <option *ngFor = "let type of shared.types">{{type}}</option>
+    </select>
+</div>
+
+<div class="container-fluid my-4">
+    <div id="divCards" class="row">
+
+        <div class="p-2 col-sm-6 col-md-4 col-lg-2" *ngFor="let result of results">
+            <div class="card">
+            <img class='card-img-top' [src]="'/assets/images/' + result.imageUrls[0]" alt='Card image' style='width:100%'>
+            <div class="card-body" style="background-color:white;">
+                <h4 class="card-title">{{result.name}}</h4>
+
+                <div *ngIf = "result.species" class="card-text">Species: {{result.species}}</div>
+                <div *ngIf = "result.age > 0" class="card-text">Age: {{result.age}}</div>
+                <div *ngIf = "result.sex > 0" class="card-text">Sex: {{result.sex}}</div>
+                <div *ngIf = "result.fixed" class="card-text">Fixed: {{result.fixed}}</div>
+                <div class="card-text">{{result.city + ", " + result.state + ", " + result.zipCode}}</div>
+
+                <div class="text-center mt-3">
+                <a href='#' class='btn btn-primary w-75 detailsA' (click)="onDetailsClicked(event, result)">Details</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    </div>

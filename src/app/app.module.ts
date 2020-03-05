@@ -20,8 +20,12 @@ import { BeefTacosComponent } from './components/food/beef-tacos/beef-tacos.comp
 import { PokeComponent } from './components/poke/poke.component';
 import { PokeService } from 'src/app/services/poke.service';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { LoginComponent } from './components/login/login.component';
 import { CaroselComponent } from './components/carosel/carosel.component';
+=======
+import { SearchComponent } from './components/search/search.component';
+>>>>>>> 19573c43404203025787e4cafcff88c89c24dd66
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +42,12 @@ import { CaroselComponent } from './components/carosel/carosel.component';
     FishTacosComponent,
     BeefTacosComponent,
     PokeComponent,
+<<<<<<< HEAD
     LoginComponent,
     CaroselComponent,
+=======
+    SearchComponent,
+>>>>>>> 19573c43404203025787e4cafcff88c89c24dd66
   ],
   imports: [
     BrowserModule,
