@@ -6,12 +6,15 @@ import { TacosComponent } from 'src/app/components/food/tacos/tacos.component';
 import { FishTacosComponent } from 'src/app/components/food/fish-tacos/fish-tacos.component';
 import { BeefTacosComponent } from 'src/app/components/food/beef-tacos/beef-tacos.component';
 import { PokeComponent } from 'src/app/components/poke/poke.component';
+import {LoginComponent} from 'src/app/components/login/login.component';
 
 /**
  * Registration of our routes
  * when the URL context is /pizzas then the router-outlet will render PizzaComponent
  */
 const routes: Routes = [{
+  component: LoginComponent,
+  path: ''}, {
   component: PokeComponent,
   path: 'pokemon'
  }, {
