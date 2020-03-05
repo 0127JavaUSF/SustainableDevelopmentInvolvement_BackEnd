@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class SharedService {
 
   public types : String[] = ["Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian"];
+  public sexes : String[] = ["Unknown", "Male", "Female"];
 
   constructor() { }
 
