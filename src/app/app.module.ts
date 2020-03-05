@@ -22,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { CaroselComponent } from './components/carosel/carosel.component';
 import { SearchComponent } from './components/search/search.component';
+import { ViewListingsComponent } from './components/view-listings/view-listings.component';
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,7 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     CaroselComponent,
     SearchComponent,
-
+    ViewListingsComponent,
   ],
   imports: [
     BrowserModule,
