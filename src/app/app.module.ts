@@ -42,7 +42,10 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     CaroselComponent,
     SearchComponent,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6403e55b1e6a08001ec5fda6d501a46afd294dcd
   ],
   imports: [
     BrowserModule,
