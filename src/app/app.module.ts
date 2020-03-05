@@ -21,6 +21,7 @@ import { PokeComponent } from './components/poke/poke.component';
 import { PokeService } from 'src/app/services/poke.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
+import { ViewListingsComponent } from './components/view-listings/view-listings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { SearchComponent } from './components/search/search.component';
     BeefTacosComponent,
     PokeComponent,
     SearchComponent,
+    ViewListingsComponent,
   ],
   imports: [
     BrowserModule,
