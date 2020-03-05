@@ -1,5 +1,5 @@
 nav {
-    background: purple;
+    background: green;
     color: #EEE;
     font-family: fantasy;
 }
@@ -7,8 +7,10 @@ nav {
 .nav-item {
     text-align: center;
     cursor: pointer;
+    font-family: sans-serif;
+    color: white;
 }
 
 .nav-item:hover {
-    background: rgb(163, 0, 163);
+    background: red;
 }
