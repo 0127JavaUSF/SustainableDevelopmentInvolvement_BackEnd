@@ -1,9 +1,9 @@
-<!-- The view listing page the user will come to.-->
+<p>{{test}}</p>
+
+<!-- The view applicationhs page the user will come to.-->
 <!-- <p>{{test}}</p> -->
-{{test}}
-<div>
-<h1>View Past Listings</h1>
-</div>
+
+<h1 align="center">View Past Applications</h1>
 <div class="container-fluid my-4">
     <div id="divCards" class="row">
 
@@ -22,8 +22,9 @@
                 <div class="card-text">Status: {{result.status}}</div>
                 <div class="card-text">Date: {{result.date}}</div>
                 
+
                 <div class="text-center mt-3">
-                <a href='#' class='btn btn-primary w-100 detailsA' (click)="onDetailsClicked(event, result)">View Applicants</a>
+                <a href='#' class='btn btn-primary w-75 detailsA' (click)="onDetailsClicked(event, result)">Details</a>
                 </div>
             </div>
             </div>
