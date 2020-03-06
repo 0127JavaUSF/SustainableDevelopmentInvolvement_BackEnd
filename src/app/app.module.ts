@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CaroselComponent } from './components/carosel/carosel.component';
 import { SearchComponent } from './components/search/search.component';
 import { ViewListingsComponent } from './components/view-listings/view-listings.component';
+import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
 
 
 
@@ -46,6 +47,7 @@ import { ViewListingsComponent } from './components/view-listings/view-listings.
     CaroselComponent,
     SearchComponent,
     ViewListingsComponent,
+    ReviewApplicantsComponent,
   ],
   imports: [
     BrowserModule,
