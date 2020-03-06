@@ -22,10 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { CaroselComponent } from './components/carosel/carosel.component';
 import { SearchComponent } from './components/search/search.component';
+import { ListingComponent } from './components/listing/listing.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SharedService } from './services/shared.service';
 import { ViewListingsComponent } from './components/view-listings/view-listings.component';
 import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
-
-
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ReviewApplicantsComponent } from './components/review-applicants/review
     LoginComponent,
     CaroselComponent,
     SearchComponent,
+    ListingComponent,
     ViewListingsComponent,
     ReviewApplicantsComponent,
   ],
@@ -53,11 +55,12 @@ import { ReviewApplicantsComponent } from './components/review-applicants/review
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
   ],
 
   // providers can be used to register services
-  providers: [ FoodService, PokeService ],
+  providers: [ FoodService, PokeService, SharedService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
