@@ -26,6 +26,7 @@ import { ListingComponent } from './components/listing/listing.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from './services/shared.service';
 import { ViewListingsComponent } from './components/view-listings/view-listings.component';
+import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ViewListingsComponent } from './components/view-listings/view-listings.
     SearchComponent,
     ListingComponent,
     ViewListingsComponent,
+    ReviewApplicantsComponent,
   ],
   imports: [
     BrowserModule,
