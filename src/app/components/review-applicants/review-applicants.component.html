@@ -1,7 +1,8 @@
-
-<p>{{}}</p>
+<div>
+<h1 align="center">Review Applicants</h1>
+</div>
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-  <ngb-panel *ngFor = "let result of results" title = "result.date + ' ' + result.name" (click) = "onClick">
+  <ngb-panel *ngFor = "let result of results" title = "{{result.date}} - {{result.name}}" (click) = "onClick(event, result)">
 
     <ng-template ngbPanelContent>
       <div *ngFor = "let q of result.questions">

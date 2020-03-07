@@ -24,14 +24,14 @@ export class ReviewApplicantsComponent implements OnInit {
         this.results = [
             {
             date : "3/4/2121",
-            name : "John White",
+            name : "Dio Brando",
             questions: [{question: "Are you allergic to cats?", answer: "Yes"},
             {question: "Do you have a yard? ", answer: "Yes"}
             ],
         },
         {
-            date : "3/4/2121",
-            name : "John White",
+            date : "12/3/2121",
+            name : "Jotaro Kujo",
             questions: [{question: "Are you allergic to cats?", answer: "Yes"},
         {question: "Do you have a yard? ", answer: "Yes"}]
         }
