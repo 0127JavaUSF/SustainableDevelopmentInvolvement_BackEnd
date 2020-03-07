@@ -26,6 +26,7 @@ import { ListingComponent } from './components/listing/listing.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from './services/shared.service';
 import { ViewPastApplicationsComponent } from './components/view-past-applications/view-past-applications.component';
+import { CreateApplicationComponent } from './components/create-application/create-application.component';
 import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
 import { ViewPastListingsComponent } from './components/view-past-listings/view-past-listings.component';
 
@@ -52,6 +53,8 @@ import { ViewPastListingsComponent } from './components/view-past-listings/view-
     ListingComponent,
     ViewPastApplicationsComponent,
     ReviewApplicantsComponent,
+    CreateApplicationComponent,
+    ReviewApplicantsComponent,
     ViewPastListingsComponent,
 
   ],
@@ -60,8 +63,9 @@ import { ViewPastListingsComponent } from './components/view-past-listings/view-
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
+
   ],
+
 
   // providers can be used to register services
   providers: [ FoodService, PokeService, SharedService ],
