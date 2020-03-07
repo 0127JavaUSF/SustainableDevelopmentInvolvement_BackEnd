@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 
 @Component({
-  selector: 'app-view-listings',
-  templateUrl: './view-listings.component.html',
-  styleUrls: ['./view-listings.component.css']
+  selector: 'app-view-past-listings',
+  templateUrl: './view-past-listings.component.html',
+  styleUrls: ['./view-past-listings.component.css']
 })
-export class ViewListingsComponent implements OnInit {
+export class ViewPastListingsComponent implements OnInit {
 
 
   selectedType : String;

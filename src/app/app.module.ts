@@ -25,9 +25,9 @@ import { SearchComponent } from './components/search/search.component';
 import { ListingComponent } from './components/listing/listing.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from './services/shared.service';
-import { ViewListingsComponent } from './components/view-listings/view-listings.component';
 import { ViewPastApplicationsComponent } from './components/view-past-applications/view-past-applications.component';
 import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
+import { ViewPastListingsComponent } from './components/view-past-listings/view-past-listings.component';
 
 
 @NgModule({
@@ -50,9 +50,9 @@ import { ReviewApplicantsComponent } from './components/review-applicants/review
     CaroselComponent,
     SearchComponent,
     ListingComponent,
-    ViewListingsComponent,
     ViewPastApplicationsComponent,
     ReviewApplicantsComponent,
+    ViewPastListingsComponent,
 
   ],
   imports: [

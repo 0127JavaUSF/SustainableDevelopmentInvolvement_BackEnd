@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewListingsComponent } from './view-listings.component';
+import { ViewPastListingsComponent } from './view-past-listings.component';
 
-describe('ViewListingsComponent', () => {
-  let component: ViewListingsComponent;
-  let fixture: ComponentFixture<ViewListingsComponent>;
+describe('ViewPastListingsComponent', () => {
+  let component: ViewPastListingsComponent;
+  let fixture: ComponentFixture<ViewPastListingsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewListingsComponent ]
+      declarations: [ ViewPastListingsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewListingsComponent);
+    fixture = TestBed.createComponent(ViewPastListingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,4 +23,3 @@ describe('ViewListingsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-  
