@@ -24,6 +24,7 @@ import { CaroselComponent } from './components/carosel/carosel.component';
 import { SearchComponent } from './components/search/search.component';
 import { ViewListingsComponent } from './components/view-listings/view-listings.component';
 import { ViewPastApplicationsComponent } from './components/view-past-applications/view-past-applications.component';
+import { CreateApplicationComponent } from './components/create-application/create-application.component';
 
 
 
@@ -48,16 +49,18 @@ import { ViewPastApplicationsComponent } from './components/view-past-applicatio
     SearchComponent,
     ViewListingsComponent,
     ViewPastApplicationsComponent,
+    //ReviewApplicantsComponent,
+    CreateApplicationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
 
   // providers can be used to register services
-  providers: [ FoodService, PokeService ],
+  providers: [ FoodService, PokeService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
