@@ -33,6 +33,13 @@
 
     <div class="input-group mb-3">
       <div class="input-group-prepend">
+        <span class="input-group-text">Zip</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Zip">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
         <span class="input-group-text">Phone</span>
       </div>
       <input type="text" class="form-control" placeholder="Phone">
@@ -44,4 +51,30 @@
       </div>
       <input type="text" class="form-control" placeholder="Email">
     </div>
+
+    <div></div>
+
+    <span class="input-group-text">Do you currently have animals?</span>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="">Yes
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="">No
+      </label>
+    </div>
+    
+    <span class="input-group-text">Ask a custom question</span>
+    <div class="form-group">
+      <label for="comment">Question:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <div></div>
+    <button type="button" class="btn btn-primary btn-lg">Ask another question</button>
+    <div></div>
+    <input type="submit" value="Submit">
+    <!-- <form action="/action_page.php" target="_blank"></form> -->
+
   </form>
