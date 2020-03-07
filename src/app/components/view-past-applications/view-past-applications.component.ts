@@ -91,7 +91,6 @@ export class ViewPastApplicationsComponent implements OnInit {
     //show the details component
   }
 
- 
 }
 
 

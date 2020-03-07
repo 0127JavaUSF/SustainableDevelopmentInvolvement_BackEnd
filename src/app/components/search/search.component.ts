@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit {
         id : 2,
         name : 'Spot',
         age : 1,
-        sex : 0,
+        sex : 2,
         species: '',
         city: 'Tampa',
         state: 'FL',

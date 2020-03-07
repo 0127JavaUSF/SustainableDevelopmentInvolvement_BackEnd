@@ -1,7 +1,9 @@
 <p>{{test}}</p>
 
+<h1 class="text-center">Search</h1>
+
 <div class="form-group mx-auto w-50">
-    <label for="type_select">Select the type of pet:</label>
+    <label for="type_select">Search by type of pet:</label>
     <select id="type_select" class="form-control" [(ngModel)]="selectedType" (change)="onTypeSelected(event)">
         <option *ngFor = "let type of shared.types">{{type}}</option>
     </select>
@@ -18,7 +20,7 @@
 
                 <div *ngIf = "result.species" class="card-text">Species: {{result.species}}</div>
                 <div *ngIf = "result.age > 0" class="card-text">Age: {{result.age}}</div>
-                <div *ngIf = "result.sex > 0" class="card-text">Sex: {{result.sex}}</div>
+                <div *ngIf = "result.sex > 0" class="card-text">Sex: {{shared.sexes[result.sex - 1]}}</div>
                 <div *ngIf = "result.fixed" class="card-text">Fixed: {{result.fixed}}</div>
                 <div class="card-text">{{result.city + ", " + result.state + ", " + result.zipCode}}</div>
 
