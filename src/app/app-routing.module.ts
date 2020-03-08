@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'pastApp', component: ViewPastApplicationsComponent},
   { path: 'pastListing', component: ViewPastListingsComponent}
 
+
   
 ];
 
