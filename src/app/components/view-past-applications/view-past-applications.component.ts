@@ -87,7 +87,6 @@ export class ViewPastApplicationsComponent implements OnInit {
     //get listing id
     let id : Number = result.id;
     this.test = "id:" + id;
-
     //show the details component
   }
 

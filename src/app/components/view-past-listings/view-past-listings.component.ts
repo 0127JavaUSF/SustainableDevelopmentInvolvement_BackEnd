@@ -85,7 +85,7 @@ export class ViewPastListingsComponent implements OnInit {
     let id : Number = result.id;
     this.test = "id:" + id;
     this.shared.listingId = id;
-    this.route.navigate(['/review-applicants']);
+    this.route.navigate(['/reviewApp']);
     //show the details component
   }
 
