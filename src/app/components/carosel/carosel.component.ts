@@ -9,7 +9,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 })
 export class CaroselComponent implements OnInit {
 
-  images : String [];
+  images: String [];
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
@@ -20,10 +20,10 @@ export class CaroselComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.images = ['/assets/images/Carosel_FrontPage/1', '/assets/images/Carosel_FrontPage/2'
-    , '/assets/images/Carosel_FrontPage/3', '/assets/images/Carosel_FrontPage/4'
-  , '/assets/images/Carosel_FrontPage/5', '/assets/images/Carosel_FrontPage/6',
-  '/assets/images/Carosel_FrontPage/7'];
+    this.images = ['/assets/images/Carosel_FrontPage/1.jpg', '/assets/images/Carosel_FrontPage/2.jpg'
+    , '/assets/images/Carosel_FrontPage/3.jpg', '/assets/images/Carosel_FrontPage/4.jpg'
+  , '/assets/images/Carosel_FrontPage/5.jpg', '/assets/images/Carosel_FrontPage/6.jpg',
+  '/assets/images/Carosel_FrontPage/7.jpg'];
 
   }
 
