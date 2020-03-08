@@ -9,7 +9,7 @@ export class SharedService {
   public sexes : String[] = ["unknown", "male", "female"];
   public types : String[] = ["Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian"];
   public fixed : String[] = ["true", "false", "unknown"];
-
+  public listingId : Number;
   constructor() { }
 
   //this converts the type String to the Number value used in Java

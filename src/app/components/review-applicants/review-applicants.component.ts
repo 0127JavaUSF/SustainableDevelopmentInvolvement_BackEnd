@@ -37,10 +37,12 @@ export class ReviewApplicantsComponent implements OnInit {
         }
         ];
     }
-        onClick(){
+        onClick(event, result){
             this.test = "This is onClick"//get function working for on click
+    
         };
     ngOnInit(){
+
 // look up the event. 
 
     }
