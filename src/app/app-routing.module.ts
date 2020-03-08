@@ -7,6 +7,7 @@ import { FishTacosComponent } from 'src/app/components/food/fish-tacos/fish-taco
 import { BeefTacosComponent } from 'src/app/components/food/beef-tacos/beef-tacos.component';
 import { PokeComponent } from 'src/app/components/poke/poke.component';
 import {LoginComponent} from 'src/app/components/login/login.component';
+import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
 
 /**
  * Registration of our routes
@@ -17,7 +18,7 @@ const routes: Routes = [{
   path: ''}, {
   component: PokeComponent,
   path: 'pokemon'
- }, {
+}, {
   component: PizzaComponent,
   path: 'pizzas'
 }, {
@@ -32,6 +33,10 @@ const routes: Routes = [{
   }, {
     path: 'beef',
     component: BeefTacosComponent
+  },
+  {
+    path: 'review-applicants',
+    component: ReviewApplicantsComponent
   }]
 }];
 

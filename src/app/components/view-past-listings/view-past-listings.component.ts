@@ -2,6 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-past-listings',
@@ -41,7 +42,9 @@ export class ViewPastListingsComponent implements OnInit {
   }
   ];
 
-  constructor(private shared: SharedService) { }
+  constructor(private shared: SharedService, private route : Router) { 
+  
+  }
 
   ngOnInit() {
 
@@ -81,7 +84,8 @@ export class ViewPastListingsComponent implements OnInit {
     //get listing id
     let id : Number = result.id;
     this.test = "id:" + id;
-
+    this.shared.listingId = id;
+    this.route.navigate(['/review-applicants']);
     //show the details component
   }
 
@@ -90,3 +94,4 @@ export class ViewPastListingsComponent implements OnInit {
     this.test = "type:" + this.selectedType + this.shared.typeToNumber(this.selectedType);
   }
 }
+// Look at Mitch's example 
