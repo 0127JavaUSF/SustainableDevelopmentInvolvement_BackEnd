@@ -63,6 +63,7 @@ import { ViewPastListingsComponent } from './components/view-past-listings/view-
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgbModule
 
   ],
 

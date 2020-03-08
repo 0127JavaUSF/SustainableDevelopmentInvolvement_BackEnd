@@ -9,7 +9,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 })
 export class CaroselComponent implements OnInit {
 
-  images: String [];
+  images: string [];
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
