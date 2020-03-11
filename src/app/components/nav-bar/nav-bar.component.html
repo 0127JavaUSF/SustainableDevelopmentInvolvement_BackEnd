@@ -1,18 +1,21 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">   
-<ul class="navbar-nav">   
-<li id="my_tickets_li" class="nav-item">    
-<a id="my_tickets_a" class="nav-link disabled" href="My Tickets">My Tickets</a>    
-</li>    
-<li id="manage_tickets_li" class="nav-item" style="display:none;">    
-<a id="manage_tickets_a" class="nav-link disabled" href="Manage Tickets">Manage Tickets</a>    
-</li>    
-</ul>    
-<ul class="navbar-nav ml-auto">    
-<li id="log_out_li" class="nav-item">    
-<a id="user_a" class="nav-link disabled username" href="User"></a>    
-</li>    
-<li id="log_out_li" class="nav-item">    
-<a id="log_out_a" class="nav-link disabled" href="Log out">Log out</a>   
-</li>    
-</ul>  
-</nav>
+
+<div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Adopt A Pet</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem routerLink="search">Search</button>
+          <button ngbDropdownItem routerLink="reviewApp">View Past Applications</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Rehome A Pet</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="pastApp">Post New Listing</button>
+              <button ngbDropdownItem routerLink="pastListing">My listings</button>
+            </div>
+          </div>
+        </div>

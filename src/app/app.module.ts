@@ -25,7 +25,11 @@ import { SearchComponent } from './components/search/search.component';
 import { ListingComponent } from './components/listing/listing.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from './services/shared.service';
-import { ViewListingsComponent } from './components/view-listings/view-listings.component';
+import { ViewPastApplicationsComponent } from './components/view-past-applications/view-past-applications.component';
+import { CreateApplicationComponent } from './components/create-application/create-application.component';
+import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
+import { ViewPastListingsComponent } from './components/view-past-listings/view-past-listings.component';
+
 
 @NgModule({
   declarations: [
@@ -47,18 +51,24 @@ import { ViewListingsComponent } from './components/view-listings/view-listings.
     CaroselComponent,
     SearchComponent,
     ListingComponent,
-    ViewListingsComponent,
+    ViewPastApplicationsComponent,
+    ReviewApplicantsComponent,
+    CreateApplicationComponent,
+    ReviewApplicantsComponent,
+    ViewPastListingsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule,
+    NgbModule
+
   ],
 
-  // services placed here are auto-injected into all components
-  providers: [ FoodService, PokeService ],
+  // providers can be used to register services
+  providers: [ FoodService, PokeService, SharedService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,22 +8,23 @@ import { BeefTacosComponent } from 'src/app/components/food/beef-tacos/beef-taco
 import { PokeComponent } from 'src/app/components/poke/poke.component';
 import { LoginComponent } from 'src/app/components/login/login.component';
 import { ListingComponent } from './components/listing/listing.component';
+import { SearchComponent } from './components/search/search.component';
+import { ReviewApplicantsComponent } from './components/review-applicants/review-applicants.component';
+import { ViewPastApplicationsComponent } from './components/view-past-applications/view-past-applications.component';
+import { ViewPastListingsComponent } from './components/view-past-listings/view-past-listings.component';
 
 /**
  * Registration of our routes
  * when the URL context is /pizzas then the router-outlet will render PizzaComponent
  */
+
 const routes: Routes = [
-  { component: LoginComponent, path: '' },
-  { component: PokeComponent, path: 'pokemon' },
-  { component: ListingComponent, path: 'listing/:id' },
-  { component: PizzaComponent, path: 'pizzas' },
-  { component: HamburgersComponent, path: 'hamburgers' },
-  { component: TacosComponent, path: 'tacos',
-    children: [
-    { path: 'fish', component: FishTacosComponent },
-    { path: 'beef', component: BeefTacosComponent }] }
-  ];
+  { path: '', component: LoginComponent},
+  { path: 'search', component: SearchComponent},
+  { path: 'reviewApp', component: ReviewApplicantsComponent},
+  { path: 'pastApp', component: ViewPastApplicationsComponent},
+  { path: 'pastListing', component: ViewPastListingsComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
