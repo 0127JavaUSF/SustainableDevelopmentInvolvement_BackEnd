@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BeefTacosComponent } from './beef-tacos.component';
+import { NewTemplateComponent } from './new-template.component';
 
-describe('BeefTacosComponent', () => {
-  let component: BeefTacosComponent;
-  let fixture: ComponentFixture<BeefTacosComponent>;
+describe('NewTemplateComponent', () => {
+  let component: NewTemplateComponent;
+  let fixture: ComponentFixture<NewTemplateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeefTacosComponent ]
+      declarations: [ NewTemplateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BeefTacosComponent);
+    fixture = TestBed.createComponent(NewTemplateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

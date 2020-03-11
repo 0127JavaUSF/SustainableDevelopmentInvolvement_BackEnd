@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
   onDetailsClicked(event, result) {
 
     //get listing id
-    let id: Number = result.id;
+    let id: number = result.id;
 
     //show the details component
   }

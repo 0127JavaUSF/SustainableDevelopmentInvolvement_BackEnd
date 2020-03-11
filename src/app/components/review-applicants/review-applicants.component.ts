@@ -1,49 +1,34 @@
 
 import { Component, OnInit } from '@angular/core';
+import { ApplicationService } from 'src/app/services/application.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
-selector: 'app-review-applicants',
-templateUrl: './review-applicants.component.html',
-styleUrls: ['./review-applicants.component.css']
+    selector: 'app-review-applicants',
+    templateUrl: './review-applicants.component.html',
+    styleUrls: ['./review-applicants.component.css']
 })
 export class ReviewApplicantsComponent implements OnInit {
-    test : String = "This is a test";
-    results : [
-        {
-        date : String,
-        name : String,
-        questions: Object[]
-    },
-    {
-        date : String,
-        name : String,
-        questions: Object[]
-    }
-    ];
-    constructor(){
-        this.results = [
-            {
-            date : "3/4/2121",
-            name : "Dio Brando",
-            questions: [{question: "Are you allergic to cats?", answer: "Yes"},
-            {question: "Do you have a yard? ", answer: "Yes"}
-            ],
+
+    results: any = null;
+
+    constructor(
+        private applicationService: ApplicationService,
+        private shared: SharedService
+    ) { }
+
+    onClick(event, result) {
+
+    };
+    ngOnInit() {
+
+        this.applicationService.getApplication(this.shared.reviewAppsListingId).subscribe(data => {
+            this.results = data;
+
+            const test = 0;
         },
-        {
-            date : "12/3/2121",
-            name : "Jotaro Kujo",
-            questions: [{question: "Are you allergic to cats?", answer: "Yes"},
-        {question: "Do you have a yard? ", answer: "Yes"}]
-        }
-        ];
-    }
-        onClick(event, result){
-            this.test = "This is onClick"//get function working for on click
-    
-        };
-    ngOnInit(){
-
-// look up the event. 
-
+        error => {
+            const test = 0;
+        });
     }
 }

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PokeService } from './poke.service';
+import { TemplateService } from './template.service';
 
-describe('PokeService', () => {
+describe('TemplateService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PokeService = TestBed.get(PokeService);
+    const service: TemplateService = TestBed.get(TemplateService);
     expect(service).toBeTruthy();
   });
 });
