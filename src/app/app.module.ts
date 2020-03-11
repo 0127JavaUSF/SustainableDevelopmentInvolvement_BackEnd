@@ -57,8 +57,8 @@ import { ViewListingsComponent } from './components/view-listings/view-listings.
     NgbModule,
   ],
 
-  // providers can be used to register services
-  providers: [ FoodService, PokeService, SharedService ],
+  // services placed here are auto-injected into all components
+  providers: [ FoodService, PokeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

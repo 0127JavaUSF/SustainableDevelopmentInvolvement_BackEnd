@@ -6,34 +6,24 @@ import { TacosComponent } from 'src/app/components/food/tacos/tacos.component';
 import { FishTacosComponent } from 'src/app/components/food/fish-tacos/fish-tacos.component';
 import { BeefTacosComponent } from 'src/app/components/food/beef-tacos/beef-tacos.component';
 import { PokeComponent } from 'src/app/components/poke/poke.component';
-import {LoginComponent} from 'src/app/components/login/login.component';
+import { LoginComponent } from 'src/app/components/login/login.component';
+import { ListingComponent } from './components/listing/listing.component';
 
 /**
  * Registration of our routes
  * when the URL context is /pizzas then the router-outlet will render PizzaComponent
  */
-const routes: Routes = [{
-  component: LoginComponent,
-  path: ''}, {
-  component: PokeComponent,
-  path: 'pokemon'
- }, {
-  component: PizzaComponent,
-  path: 'pizzas'
-}, {
-  component: HamburgersComponent,
-  path: 'hamburgers'
-}, {
-  component: TacosComponent,
-  path: 'tacos',
-  children: [{
-    path: 'fish',
-    component: FishTacosComponent
-  }, {
-    path: 'beef',
-    component: BeefTacosComponent
-  }]
-}];
+const routes: Routes = [
+  { component: LoginComponent, path: '' },
+  { component: PokeComponent, path: 'pokemon' },
+  { component: ListingComponent, path: 'listing/:id' },
+  { component: PizzaComponent, path: 'pizzas' },
+  { component: HamburgersComponent, path: 'hamburgers' },
+  { component: TacosComponent, path: 'tacos',
+    children: [
+    { path: 'fish', component: FishTacosComponent },
+    { path: 'beef', component: BeefTacosComponent }] }
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
