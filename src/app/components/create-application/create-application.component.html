@@ -1,0 +1,81 @@
+<h1 align="center">Create Application</h1>
+
+<form>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Person</span>
+      </div>
+      <input type="text" class="form-control" placeholder="First Name">
+      <input type="text" class="form-control" placeholder="Last Name">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Address</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Street1">
+      <input type="text" class="form-control" placeholder="Street2">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">City</span>
+      </div>
+      <input type="text" class="form-control" placeholder="City">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">State</span>
+      </div>
+      <input type="text" class="form-control" placeholder="State">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Zip</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Zip">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Phone</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Phone">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Email</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Email">
+    </div>
+
+    <div></div>
+
+    <span class="input-group-text">Do you currently have animals?</span>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="">Yes
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" value="">No
+      </label>
+    </div>
+    
+    <span class="input-group-text">Ask a custom question</span>
+    <div class="form-group">
+      <label for="comment">Question:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <div></div>
+    <button type="button" class="btn btn-primary btn-lg" name="myBtn">Ask another question</button>
+    document.getElementById("myBtn").addEventListener("click", displayDate);
+    <div></div>
+    <input type="submit" value="Submit">
+    <!-- <form action="/action_page.php" target="_blank"></form> -->
+
+  </form>

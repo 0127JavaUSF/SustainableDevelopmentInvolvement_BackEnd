@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { SharedService } from '../../services/shared.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ListingService } from '../../services/listing.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-listing',
@@ -9,48 +13,42 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ListingComponent implements OnInit {
 
-  images : String[] = ["/assets/images/dog2.png", "/assets/images/dog3.png", "/assets/images/dog2.png", "/assets/images/professor.png"];
+  constructor(
+    private listingService: ListingService,
+    config: NgbCarouselConfig,
+    private sanitizer: DomSanitizer,
+    private shared: SharedService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
 
-  constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
-    config.interval = 4000;
+    config.interval = 0; //setting the interval seems to refresh the page which restarts any videos playing. so do not set > 0
     config.wrap = true;
     config.keyboard = true;
     config.pauseOnHover = true;
   }
 
-  result : {
-      id : Number,
-      name : String,
-      type: Number,
-      age : Number,
-      color : Number,
-      sex : Number,
-      species : String,
-      city : String,
-      state : String,
-      zipCode : String,
-      imageUrls : String[],
-      videoUrls : String[],
-      fixed : Boolean
-  };
+  result: any;
 
   ngOnInit() {
 
-    this.result = {
-        id : 1,
-        name : 'Fido',
-        type: 1,
-        age : 0,
-        color : 2,
-        sex : 1,
-        species: 'Pitbull',
-        city: 'Tampa',
-        state: 'FL',
-        zipCode: '32720',
-        imageUrls : ['m1_0.png', 'm2_0.png'],
-        videoUrls : [''],
-        fixed : true
-      };
+    //get id from url
+    this.route.queryParams.subscribe(params => {
+
+      if(!params.id) {
+        return;
+      }
+
+      this.listingService.getListing(params.id).subscribe(data => {
+        this.result = data;
+      }, error => {
+      });
+    })
+  }
+
+  onAdoptClicked(event) {
+
+    //this.router.navigate(['listing', id]);
   }
 }

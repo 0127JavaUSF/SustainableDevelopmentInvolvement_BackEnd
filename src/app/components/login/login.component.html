@@ -6,10 +6,10 @@
         <div class="form-group mx-auto w-50">
     <div style="display:flex;">    
         <span class="hide">required</span>   
-        <input [(ngModel)]="username" id="username_text" class="form-control my-3" placeholder="Username" type="text">
+        <input name="User" [(ngModel)]="username" id="username_text" class="form-control my-3" placeholder="Username" type="text">
             <span id="username_required" class="error hide my-auto">required</span>    </div>
     <div style="display:flex;">
-        <span class="hide">required</span>    <input id="password_text" class="form-control my-3" placeholder="Password" type="password">    <span id="password_required" class="error hide my-auto">required</span>    </div>
+        <span class="hide">required</span>    <input name="Userpassword" [(ngModel)]="password" id="password_text" class="form-control my-3" placeholder="Password" type="password">    <span id="password_required" class="error hide my-auto">required</span>    </div>
     <div class="text-center">
     <input id="login_button" (click)="onSubmit" class="btn btn-primary revature_orange w-25" type="submit" value="Login">    
     <div id="login_error" class="error hide">error</div>    
