@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from '../../services/shared.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ListingService } from '../../services/listing.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-listing',
@@ -11,7 +13,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ListingComponent implements OnInit {
 
-  constructor(config: NgbCarouselConfig, private shared: SharedService, private sanitizer: DomSanitizer) {
+  constructor(
+    private listingService: ListingService,
+    config: NgbCarouselConfig,
+    private sanitizer: DomSanitizer,
+    private shared: SharedService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+
     // customize default values of carousels used by this component tree
     config.interval = 0; //setting the interval seems to refresh the page which restarts any videos playing. so do not set > 0
     config.wrap = true;
@@ -19,47 +29,26 @@ export class ListingComponent implements OnInit {
     config.pauseOnHover = true;
   }
 
-  //fake server call result
-  result : {
-      id : Number,
-      name : String,
-      type: Number,
-      age : Number,
-      color : Number,
-      sex : Number,
-      species : String,
-      city : String,
-      state : String,
-      zipCode : String,
-      imageUrls : String[],
-      videoUrls : String[],
-      fixed : Number,
-      about : String
-  };
+  result: any;
 
   ngOnInit() {
 
-    this.result = {
-        id : 1,
-        name : 'Fido',
-        type: 1,
-        age : 4,
-        color : 2,
-        sex : 1,
-        species : 'Pitbull',
-        city : 'Tampa',
-        state : 'FL',
-        zipCode : '32720',
-        imageUrls : ["/assets/images/funny_dog.jpg", "/assets/images/funny_dog2.jpg"],
-        videoUrls : ['https://www.youtube.com/embed/AcL0MeVZIxM', 'https://www.youtube.com/embed/BkD2nN5275c'],
-        fixed : 1,
-        about : "Retired police dog looking for an owner who enjoys naps, lounging by the pool, long summer days and rolling in the grass."
-      };
+    //get id from url
+    this.route.queryParams.subscribe(params => {
+
+      if(!params.id) {
+        return;
+      }
+
+      this.listingService.getListing(params.id).subscribe(data => {
+        this.result = data;
+      }, error => {
+      });
+    })
   }
 
   onAdoptClicked(event) {
 
-    //testing click
-    //this.result.name="Chance";
+    //this.router.navigate(['listing', id]);
   }
 }

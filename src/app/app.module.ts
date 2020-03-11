@@ -67,7 +67,6 @@ import { ViewPastListingsComponent } from './components/view-past-listings/view-
 
   ],
 
-
   // providers can be used to register services
   providers: [ FoodService, PokeService, SharedService ],
   bootstrap: [AppComponent]
