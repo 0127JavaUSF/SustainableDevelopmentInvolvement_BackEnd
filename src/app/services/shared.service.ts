@@ -6,6 +6,15 @@ import { Router } from '@angular/router';
 })
 export class SharedService {
 
+  public colors: string[] = ["red", "orange", "yellow", "green", "blue", "purple", "white", "black", "brown", "tan", "spotted", "striped"];
+  public sexes: string[] = ["unknown", "male", "female"];
+  public types: string[] = ["dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian"];
+  public fixed: string[] = ["true", "false", "unknown"];
+  public status: string[] = ["not viewed", "viewed"];
+
+  listingId : number = 1;
+  newListingId: number = 1;
+  reviewAppsListingId: number = 1;
 
   //JL
   public dogColors = [
@@ -129,16 +138,10 @@ public catColors = [
     }
   ];
 
-  public colors: String[] = ["red", "orange", "yellow", "green", "blue", "purple", "white", "black", "brown", "tan", "spotted", "striped"];
-  public sexes: String[] = ["unknown", "male", "female"];
-  public types: String[] = ["dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian"];
-  public fixed: String[] = ["true", "false", "unknown"];
-  public status: String[] = ["not viewed", "viewed"];
-
   constructor() { }
 
   //this converts the type String to the Number value used in Java
-  public typeToNumber(type: String): Number {
+  public typeToNumber(type: string): number {
 
     for (let i = 0; i < this.types.length; i++) {
 

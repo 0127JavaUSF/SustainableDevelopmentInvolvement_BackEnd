@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class ViewPastListingsComponent implements OnInit {
 
 
-  selectedType : String;
-  test : String = "The view listings works";
+  selectedType : string;
+  test : string = "The view listings works";
 
   results : [
     {
@@ -82,7 +82,7 @@ export class ViewPastListingsComponent implements OnInit {
   onDetailsClicked(event, result) {
 
     //get listing id
-    let id : Number = result.id;
+    let id : number = result.id;
     this.test = "id:" + id;
     this.shared.listingId = id;
     this.route.navigate(['/reviewApp']);
