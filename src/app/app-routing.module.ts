@@ -15,7 +15,7 @@ import { CaroselComponent } from './components/carosel/carosel.component';
  */
 
 const routes: Routes = [
-  { path: '', component: CaroselComponent},
+  { path: '', component: LoginComponent},
   { path: 'newlisting', component: NewListingComponent},
   { path: 'search', component: SearchComponent},
   { path: 'reviewApp', component: ReviewApplicantsComponent},
