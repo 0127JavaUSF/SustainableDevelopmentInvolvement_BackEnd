@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 })
 export class SharedService {
 
-  public colors: string[] = ["red", "orange", "yellow", "green", "blue", "purple", "white", "black", "brown", "tan", "spotted", "striped"];
+  public colors: string[] = ["unknown", "red", "orange", "yellow", "green", "blue", "purple", "white", "black", "brown", "tan", "spotted", "striped"];
   public sexes: string[] = ["unknown", "male", "female"];
-  public types: string[] = ["dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian"];
-  public fixed: string[] = ["true", "false", "unknown"];
+  public types: string[] = ["unknown", "dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian", "other"];
+  public fixed: string[] = ["unknown", "true", "false"];
   public status: string[] = ["not viewed", "viewed"];
 
   listingId : number = 1;
@@ -140,6 +140,42 @@ public catColors = [
 
   constructor() { }
 
+  public colorToNumber(color: string): number {
+
+    for (let i = 0; i < this.colors.length; i++) {
+
+      if (color === this.colors[i]) {
+        return i + 1;
+      }
+    }
+    //return unknown
+    return 1;
+  }
+
+  public fixedToNumber(fixed: string): number {
+
+    for (let i = 0; i < this.fixed.length; i++) {
+
+      if (fixed === this.fixed[i]) {
+        return i + 1;
+      }
+    }
+    //return unknown
+    return 1;
+  }
+
+  public sexToNumber(sex: string): number {
+
+    for (let i = 0; i < this.sexes.length; i++) {
+
+      if (sex === this.sexes[i]) {
+        return i + 1;
+      }
+    }
+    //return unknown
+    return 1;
+  }
+
   //this converts the type String to the Number value used in Java
   public typeToNumber(type: string): number {
 
@@ -149,7 +185,7 @@ public catColors = [
         return i + 1;
       }
     }
-    //return 0 if empty string or invalid
-    return 0;
+    //return unknown
+    return 1;
   }
 }
