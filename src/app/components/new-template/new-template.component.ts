@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TemplateService } from 'src/app/services/template.service';
 import { Template } from 'src/app/models/template';
 import { TemplateQuestion } from 'src/app/models/template-question';
-import { toPublicName } from '@angular/compiler/src/i18n/serializers/xmb';
 
 @Component({
   selector: 'app-new-template',
@@ -41,10 +40,13 @@ export class NewTemplateComponent implements OnInit {
 
     for(let question of this.questions) {
 
-      let tq: TemplateQuestion = new TemplateQuestion();
-      tq.question = question;
+      let q = question.trim();
+      if(q) {
+        let tq: TemplateQuestion = new TemplateQuestion();
+        tq.question = q;
 
-      template.questions.push(tq);
+        template.questions.push(tq);
+      }
     }
 
     //if not empty
