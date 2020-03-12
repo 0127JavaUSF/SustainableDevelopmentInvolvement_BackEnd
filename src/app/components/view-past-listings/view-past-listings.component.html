@@ -1,8 +1,5 @@
-<!-- <p>view-past-listings works!</p> -->
-
 <!-- The view listing page the user will come to.-->
-<!-- <p>{{test}}</p> -->
-{{test}}
+
 <div>
 <h1>View Past Listings</h1>
 </div>
@@ -11,7 +8,7 @@
 
         <div class="p-2 col-sm-6 col-md-4 col-lg-2" *ngFor="let result of results">
             <div class="card">
-            <img class='card-img-top' [src]="'/assets/images/' + result.imageUrls[0]" alt='Card image' style='width:100%'>
+            <img *ngIf="result.imageUrls.length > 0" class='card-img-top' [src]="result.imageUrls[0].url" alt='Card image' style='width:100%'>
             <div class="card-body" style="background-color:white;">
                 <h4 class="card-title">{{result.name}}</h4>
 
@@ -21,8 +18,8 @@
                 <div *ngIf = "result.fixed" class="card-text">Fixed: {{result.fixed}}</div>
                 <div class="card-text">{{result.city + ", " + result.state + ", " + result.zipCode}}</div>
                 <hr>
-                <div class="card-text">Status: {{result.status}}</div>
                 <div class="card-text">Date: {{result.date}}</div>
+                <div class="card-text">Status: {{result.status}}</div>
                 
                 <div class="text-center mt-3">
                 <a href='#' class='btn btn-primary w-100 detailsA' (click)="onDetailsClicked(event, result)">View Applicants</a>

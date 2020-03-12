@@ -18,4 +18,8 @@ export class ApplicationService {
   getApplication(listingId: Number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/by-listing.app/?listing_id=${listingId}`);
   }
+
+  getPastApplication(): Observable<Object> {
+    return this.http.get(`${this.baseUrl}/by-user.app`);
+}
 }

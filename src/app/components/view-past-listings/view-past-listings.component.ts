@@ -1,5 +1,3 @@
-// Boilerplate  bootstrap card code from Henry.
-
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { Router } from '@angular/router';
@@ -28,9 +26,6 @@ export class ViewPastListingsComponent implements OnInit {
       this.results = data;
     }, error => {
     });
-    //do post request to get search results
-
-
   }
 
   onDetailsClicked(event, result) {
@@ -45,7 +40,5 @@ export class ViewPastListingsComponent implements OnInit {
 
   onTypeSelected(event) {
 
-    this.test = "type:" + this.selectedType + this.shared.typeToNumber(this.selectedType);
   }
 }
-// Look at Mitch's example 

@@ -138,7 +138,6 @@ public catColors = [
     }
   ];
 
-  listingId: Number;
   constructor() { }
 
   public colorToNumber(color: string): number {
