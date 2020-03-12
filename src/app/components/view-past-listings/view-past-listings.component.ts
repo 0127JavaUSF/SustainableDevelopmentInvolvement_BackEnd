@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { Router } from '@angular/router';
+import { ListingService } from 'src/app/services/listing.service';
 
 @Component({
   selector: 'app-view-past-listings',
@@ -12,77 +13,30 @@ import { Router } from '@angular/router';
 export class ViewPastListingsComponent implements OnInit {
 
 
-  selectedType : String;
-  test : String = "The view listings works";
+  selectedType : string;
+  test : string = "The view listings works";
 
-  results : [
-    {
-      id : Number,
-      name : String,
-      age : Number,
-      sex : Number,
-      species : String,
-      city : String,
-      state : String,
-      zipCode : String,
-      imageUrls : String[],
-      fixed : Boolean
-  },
-  {
-    id : Number,
-    name : String,
-    age : Number,
-    sex : Number,
-    species : String,
-    city : String,
-    state : String,
-    zipCode : String,
-    imageUrls : String[],
-    fixed : Boolean
-  }
-  ];
+  results : any;
 
-  constructor(private shared: SharedService, private route : Router) { 
+  constructor(private shared: SharedService, private route : Router, private listingService : ListingService) { 
   
   }
 
   ngOnInit() {
 
+    this.listingService.getPastListing().subscribe(data => {
+      this.results = data;
+    }, error => {
+    });
     //do post request to get search results
 
-    //fake data from post request
-    this.results = [
-      {
-        id : 1,
-        name : 'Fido',
-        age : 0,
-        sex : 1,
-        species: 'Pitbull',
-        city: 'Tampa',
-        state: 'FL',
-        zipCode: '32720',
-        imageUrls : ['m1_0.png', 'm2_0.png'],
-        fixed : true
-      },
-      {
-        id : 2,
-        name : 'Spot',
-        age : 1,
-        sex : 0,
-        species: '',
-        city: 'Tampa',
-        state: 'FL',
-        zipCode: '32720',
-        imageUrls : ['m2_0.png', 'm1_0.png'],
-        fixed : true
-      }
-    ];
+
   }
 
   onDetailsClicked(event, result) {
 
     //get listing id
-    let id : Number = result.id;
+    let id : number = result.id;
     this.test = "id:" + id;
     this.shared.listingId = id;
     this.route.navigate(['/reviewApp']);
