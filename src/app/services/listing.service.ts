@@ -19,6 +19,10 @@ export class ListingService {
     return this.http.get(`${this.baseUrl}/search.app/?page=${page}&type=${type}&city=${city}`);
   }
 
+  getPastListing(): Observable<Object> {
+    return this.http.get(`${this.baseUrl}/find-by-user.app`);
+}
+
   createListing(listing: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, listing);
   }
