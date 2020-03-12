@@ -9,7 +9,7 @@
 
         <div class="p-2 col-sm-6 col-md-4 col-lg-2" *ngFor="let result of results">
             <div class="card">
-            <img class='card-img-top' [src]="'/assets/images/' + result.imageUrls[0]" alt='Card image' style='width:100%'>
+            <img *ngIf="result.imageUrls.length > 0" class='card-img-top' [src]="result.imageUrls[0].url" alt='Card image' style='width:100%'>
             <div class="card-body" style="background-color:white;">
                 <h4 class="card-title">{{result.name}}</h4>
 

@@ -44,8 +44,8 @@
         <div *ngIf="result.videoUrls && result.videoUrls.length > 0">
             <div class="my-5" *ngFor="let video of result.videoUrls">
                 <!--urls in angular must be "sanitized" when binding to src attribute-->
-                <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl(video.url)" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl(video.url)"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
         </div>
