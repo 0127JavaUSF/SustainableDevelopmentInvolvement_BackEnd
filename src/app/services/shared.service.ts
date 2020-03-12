@@ -12,6 +12,7 @@ export class SharedService {
   public fixed: String[] = ["true", "false", "unknown"];
   public status: String[] = ["not viewed", "viewed"];
 
+  listingId: Number;
   constructor() { }
 
   //this converts the type String to the Number value used in Java
