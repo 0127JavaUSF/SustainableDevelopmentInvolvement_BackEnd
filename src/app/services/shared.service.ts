@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  public types : String[] = ["Cat", "Dog", "Fish", "Rodent", "Reptile", "Amphibian"];
-  public sexes : String[] = ["Male", "Female","Unknown"];
+  public colors: string[] = ["unknown", "red", "orange", "yellow", "green", "blue", "purple", "white", "black", "brown", "tan", "spotted", "striped"];
+  public sexes: string[] = ["unknown", "male", "female"];
+  public types: string[] = ["unknown", "dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian", "other"];
+  public fixed: string[] = ["unknown", "true", "false"];
+  public status: string[] = ["not viewed", "viewed"];
+
+  listingId : number = 1;
+  newListingId: number = 1;
+  reviewAppsListingId: number = 1;
 
   //JL
   public dogColors = [
@@ -132,15 +140,52 @@ public catColors = [
 
   constructor() { }
 
-  //this converts the type String to the Number value used in Java
-  public typeToNumber(type : String) : Number {
+  public colorToNumber(color: string): number {
 
-    for(let i = 0; i < this.types.length; i++) {
+    for (let i = 0; i < this.colors.length; i++) {
 
-      if(type === this.types[i]) {
+      if (color === this.colors[i]) {
         return i + 1;
       }
     }
-    return 0;
+    //return unknown
+    return 1;
+  }
+
+  public fixedToNumber(fixed: string): number {
+
+    for (let i = 0; i < this.fixed.length; i++) {
+
+      if (fixed === this.fixed[i]) {
+        return i + 1;
+      }
+    }
+    //return unknown
+    return 1;
+  }
+
+  public sexToNumber(sex: string): number {
+
+    for (let i = 0; i < this.sexes.length; i++) {
+
+      if (sex === this.sexes[i]) {
+        return i + 1;
+      }
+    }
+    //return unknown
+    return 1;
+  }
+
+  //this converts the type String to the Number value used in Java
+  public typeToNumber(type: string): number {
+
+    for (let i = 0; i < this.types.length; i++) {
+
+      if (type === this.types[i]) {
+        return i + 1;
+      }
+    }
+    //return unknown
+    return 1;
   }
 }
