@@ -7,6 +7,7 @@ import { ReviewApplicantsComponent } from './components/review-applicants/review
 import { ViewPastApplicationsComponent } from './components/view-past-applications/view-past-applications.component';
 import { ViewPastListingsComponent } from './components/view-past-listings/view-past-listings.component';
 import { NewListingComponent } from './components/new-listing/new-listing.component';
+import { CaroselComponent } from './components/carosel/carosel.component';
 
 /**
  * Registration of our routes
@@ -14,7 +15,7 @@ import { NewListingComponent } from './components/new-listing/new-listing.compon
  */
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
+  { path: '', component: CaroselComponent},
   { path: 'newlisting', component: NewListingComponent},
   { path: 'search', component: SearchComponent},
   { path: 'reviewApp', component: ReviewApplicantsComponent},
