@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TemplateService } from 'src/app/services/template.service';
 import { Template } from 'src/app/models/template';
 import { TemplateQuestion } from 'src/app/models/template-question';
+import { SharedService } from '../../services/shared.service';
+import { Listing } from '../../models/listing';
 
 @Component({
   selector: 'app-new-template',
@@ -13,7 +15,9 @@ export class NewTemplateComponent implements OnInit {
   newQuestion: string = '';
   questions: string[] = [];
 
-  constructor(private templateService: TemplateService) { }
+  constructor(
+    private shared: SharedService,
+    private templateService: TemplateService) { }
 
   ngOnInit() {
   }
@@ -59,6 +63,10 @@ export class NewTemplateComponent implements OnInit {
       //save question
       template.questions.push(tq);
     }
+
+    //must pass listing
+    template.listing = new Listing();
+    template.listing.id = this.shared.newTemplateId;
 
     //do post call
     this.templateService.createTemplate(template).subscribe( (data: any)=> {
