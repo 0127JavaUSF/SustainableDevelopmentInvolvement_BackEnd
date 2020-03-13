@@ -123,6 +123,25 @@ export class NewListingComponent implements OnInit {
 
       const newListing = data; //data is new listing returned by server
 
+      //upload files to AWS
+      let i = 0;
+      for(let file of this.imageFiles) {
+
+        this.listingService.uploadAWSS3(
+          newListing.imagePresignedUrls[i],
+          file.type,
+          file).subscribe((data: any) => {
+
+            const success = 0;
+          },
+          error => {
+
+            const fail = 0;
+          });
+
+        i++;
+      }
+
       //user should be routed to view-past-listings component
     },
       error => {

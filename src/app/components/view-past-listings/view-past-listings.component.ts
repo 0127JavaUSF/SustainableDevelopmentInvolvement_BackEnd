@@ -10,11 +10,8 @@ import { ListingService } from 'src/app/services/listing.service';
 })
 export class ViewPastListingsComponent implements OnInit {
 
-
-  selectedType : string;
-  test : string = "The view listings works";
-
   results : any;
+  selectedType : string;
 
   constructor(private shared: SharedService, private route : Router, private listingService : ListingService) { 
   
@@ -25,20 +22,15 @@ export class ViewPastListingsComponent implements OnInit {
     this.listingService.getPastListing().subscribe(data => {
       this.results = data;
     }, error => {
+      const test = 0;
     });
   }
 
-  onDetailsClicked(event, result) {
+  onViewApplicantsClicked(event, result) {
 
     //get listing id
-    let id : number = result.id;
-    this.test = "id:" + id;
-    this.shared.listingId = id;
+    this.shared.reviewAppsListingId = result.id;
+
     this.route.navigate(['/reviewApp']);
-    //show the details component
-  }
-
-  onTypeSelected(event) {
-
   }
 }

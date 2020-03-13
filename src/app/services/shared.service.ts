@@ -16,6 +16,7 @@ export class SharedService {
   listingId : number = 1;
   newTemplateId: number = 1;
   reviewAppsListingId: number = 1;
+  withCred: boolean = false;
 
   //JL
   public dogColors = [
