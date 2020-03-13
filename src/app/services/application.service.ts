@@ -12,14 +12,14 @@ export class ApplicationService {
   constructor(private http: HttpClient) {}
 
   createApplication(application: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/create.app`, application);
+    return this.http.post(`${this.baseUrl}/create.app`, application, { withCredentials: true });
   }
 
   getApplication(listingId: Number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/by-listing.app/?listing_id=${listingId}`);
+    return this.http.get(`${this.baseUrl}/by-listing.app/?listing_id=${listingId}`, { withCredentials: true });
   }
 
   getPastApplication(): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/by-user.app`);
+    return this.http.get(`${this.baseUrl}/by-user.app`, { withCredentials: true });
 }
 }

@@ -12,10 +12,10 @@ export class TemplateService {
   constructor(private http: HttpClient) {}
 
   createTemplate(template: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/create.app`, template);
+    return this.http.post(`${this.baseUrl}/create.app`, template, { withCredentials: true });
   }
 
   getTemplate(listingId: number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}.app/?listing_id=${listingId}`);
+    return this.http.get(`${this.baseUrl}.app/?listing_id=${listingId}`, { withCredentials: true });
   }
 }
