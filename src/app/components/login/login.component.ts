@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
 
+  errorMess: string = "";
+  loginClass: string = "error hide";
   usernameClass: string;
   passwordClass: string;
   hide: string = "error hide my-auto";
@@ -71,11 +73,17 @@ export class LoginComponent implements OnInit {
     this.userService.login(user).subscribe(data => {
       const newUser = data;
 
+      //hide error
+      this.loginClass = "error hide";
+
       //route to search page by default
       this.route.navigate(['search']);
 
     }, error => {
-      const test = 0;
+
+      this.loginClass = "error";
+
+      this.errorMess = "error " + error.status;
     });
   }
 }

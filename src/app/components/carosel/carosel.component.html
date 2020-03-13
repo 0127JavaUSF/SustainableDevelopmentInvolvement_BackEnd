@@ -1,10 +1,10 @@
-<div class="container col-sm-8 col-md-7 col-lg-6">
-<ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+<div>
+<ngb-carousel #carousel interval="2000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
   <ng-template ngbSlide *ngFor="let img of images;">
     <div class="carousel-caption">
     </div>
     
-      <div class="picsum-img-wrapper">
+      <div class="picsum-img-wrapper" class="text-center">
         <img [src]="img" alt="My image">
       </div>
     
