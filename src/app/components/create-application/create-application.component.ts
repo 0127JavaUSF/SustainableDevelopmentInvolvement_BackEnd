@@ -35,7 +35,7 @@ export class CreateApplicationComponent implements OnInit {
   ngOnInit() {
 
     //get call for application questions
-    this.templateService.getTemplate(this.shared.newListingId).subscribe( (data: any) => {
+    this.templateService.getTemplate(this.shared.createAppListingId).subscribe( (data: any) => {
       this.template = data;
 
       //create answers array

@@ -12,8 +12,9 @@ export class SharedService {
   public fixed: string[] = ["unknown", "true", "false"];
   public status: string[] = ["not viewed", "viewed"];
 
+  createAppListingId : number = 1;
   listingId : number = 1;
-  newListingId: number = 1;
+  newTemplateId: number = 1;
   reviewAppsListingId: number = 1;
 
   //JL

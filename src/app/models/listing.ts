@@ -3,6 +3,7 @@ import { VideoUrl } from './video-url';
 
 export class Listing {
 
+    public id: number = 0;
     public about: string = "";
     public age: number = 0;
     public city: string = "";

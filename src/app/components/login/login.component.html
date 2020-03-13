@@ -19,7 +19,7 @@
             <div class="text-center">
                 <input id="login_button" (click)="onSubmit()" class="btn btn-primary btn-lg revature_orange w-25"
                     type="submit" value="Login">
-                <div id="login_error" class="error hide">error</div>
+                <div id="login_error" [class]="loginClass">{{errorMess}}</div>
             </div>
         </div>
     </div>
