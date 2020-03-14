@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { ListingService } from '../../services/listing.service';
+import { from } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -35,8 +38,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private listingService: ListingService,
-    private shared: SharedService) { }
-
+    private shared: SharedService, private router: Router) { }
+                                      
   ngOnInit() {
 
     this.enableDisablePages();
@@ -44,10 +47,10 @@ export class SearchComponent implements OnInit {
 
   onDetailsClicked(event, result) {
 
-    //get listing id
+    // get listing id
     let id: number = result.id;
 
-    //show the details component
+
   }
 
   onPagePrev(event) {

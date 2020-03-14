@@ -58,16 +58,16 @@ export class NewListingComponent implements OnInit {
 
   onPicInput(element, index) {
 
-    if(element.target.files.length > 0) {
+    if (element.target.files.length > 0) {
       //save the file in the images array
-      this.imageFiles.push(element.target.files);
+      this.imageFiles.push(element.target.files[0]);
     }
   }
 
   onReplacePic(element, index) {
 
-    if(element.target.files.length > 0) {
-      this.imageFiles[index] = element.target.files;
+    if (element.target.files.length > 0) {
+      this.imageFiles[index] = element.target.files[0];
     }
   }
 
@@ -93,9 +93,9 @@ export class NewListingComponent implements OnInit {
     //images need to be uploaded to S3 bucket, NOT our server
     //but our server still needs to know how many images will be uploaded
     //so it can retreive the correct presigned url
-    for(let file of this.imageFiles) {
+    for (let file of this.imageFiles) {
       let img = new ImageUrl();
-      img.url = file[0].name; //this is ONLY the name, not the actual file
+      img.url = file.name; //this is ONLY the name, not the actual file
 
       listing.imageUrls.push(img);
     }
@@ -111,7 +111,7 @@ export class NewListingComponent implements OnInit {
     }
 
     //copy video urls to listing object
-    for(let url of this.videoUrls) {
+    for (let url of this.videoUrls) {
       let video = new VideoUrl();
       video.url = url;
 
@@ -125,16 +125,15 @@ export class NewListingComponent implements OnInit {
 
       //upload files to AWS
       let i = 0;
-      for(let file of this.imageFiles) {
+      for (let file of this.imageFiles) {
 
         this.listingService.uploadAWSS3(
           newListing.imagePresignedUrls[i],
           file.type,
           file).subscribe((data: any) => {
 
-            const success = 0;
-          },
-          error => {
+            const success = data;
+          }, error => {
 
             const fail = 0;
           });
