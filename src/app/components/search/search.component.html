@@ -48,7 +48,7 @@
                 <div class="card-text">{{result.city + ", " + result.state + ", " + result.zipCode}}</div>
 
                 <div class="text-center mt-3">
-                <a href='#' class='btn btn-primary w-75 detailsA' (click)="onDetailsClicked(event, result)">Details</a>
+                <a class='btn btn-primary w-75 detailsA' (click)="onDetailsClicked(event, result)" [routerLink]="['/app-listing', result.id]">Details</a>
                 </div>
             </div>
             </div>

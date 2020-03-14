@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
 })
 export class ListingComponent implements OnInit {
+  [x: string]: any;
 
   constructor(
     private listingService: ListingService,
@@ -35,10 +36,11 @@ export class ListingComponent implements OnInit {
 
     //get id from url
     this.route.queryParams.subscribe(params => {
-
       if(!params.id) {
         return;
       }
+
+      
 
       this.listingService.getListing(params.id).subscribe(data => {
         this.result = data;

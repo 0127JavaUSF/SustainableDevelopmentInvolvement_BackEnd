@@ -20,8 +20,11 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent},
   { path: 'reviewApp', component: ReviewApplicantsComponent},
   { path: 'pastApp', component: ViewPastApplicationsComponent},
-  { path: 'pastListing', component: ViewPastListingsComponent}
+  { path: 'pastListing', component: ViewPastListingsComponent},
+  { path: 'app-listing/:id', component: ListingComponent}
+  
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
