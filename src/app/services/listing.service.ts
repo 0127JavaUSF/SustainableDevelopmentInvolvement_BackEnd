@@ -25,9 +25,7 @@ export class ListingService {
   }
 
   createListing(listing: Object): Observable<Object> {
-<<<<<<< HEAD
-    return this.http.post("http://localhost:8080/api/v1/listing/create.app", listing);
-=======
+
     return this.http.post(`${this.baseUrl}/create.app`, listing, { withCredentials: this.shared.withCred });
   }
 
@@ -39,7 +37,7 @@ export class ListingService {
         headers: headers,
       });
     return this.http.request(req);
->>>>>>> 5aea06a1b3d00c0e0935d7a642b4efe680d4ccbf
+
   }
 
   // getAllListings(): Observable<any> {
