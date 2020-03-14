@@ -42,7 +42,9 @@ export class ListingComponent implements OnInit {
 
       this.listingService.getListing(params.id).subscribe(data => {
         this.result = data;
-      }, error => {
+      },
+      error => {
+        const test = 0;
       });
     })
   }

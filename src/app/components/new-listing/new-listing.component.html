@@ -64,15 +64,15 @@
 
     <div *ngIf="imageFiles && imageFiles.length > 0">
       <div class="custom-file mb-3" *ngFor="let file of imageFiles; let num = index">
-        <input type="file" class="custom-file-input" id="customFile" (change)="onReplacePic($event, num)">
-        <label class="custom-file-label" for="customFile">{{file[0].name}}</label>
+        <input type="file" class="custom-file-input" id="custom-file" (change)="onReplacePic($event, num)">
+        <label class="custom-file-label" for="custom-file">{{file.name}}</label>
       </div>
     </div>
 
     <!--upload a picture-->
     <div class="custom-file mb-3">
-      <input type="file" class="custom-file-input" id="customFile" (change)="onPicInput($event)">
-      <label class="custom-file-label" for="customFile">Upload a picture of your friend/pet</label>
+      <input type="file" class="custom-file-input" id="new-file" (change)="onPicInput($event)">
+      <label class="custom-file-label" for="new-file">Upload a picture of your friend/pet</label>
     </div>
 
     <div class="text-center">
