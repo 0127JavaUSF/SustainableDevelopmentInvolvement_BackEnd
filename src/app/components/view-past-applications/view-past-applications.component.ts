@@ -10,29 +10,28 @@ import { ApplicationService } from 'src/app/services/application.service';
 })
 export class ViewPastApplicationsComponent implements OnInit {
 
-  selectedType : String;
-  test : String = "Search Works";
-
+  noneMess: string = "";
   results : any;
   constructor(private shared: SharedService, private route : Router, private applicationService : ApplicationService) { }
 
   ngOnInit() {
     this.applicationService.getPastApplication().subscribe(data => {
       this.results = data;
-    }, error => {
+
+      if(this.results == null || this.results.length == 0) {
+        this.noneMess = "None";
+      }
+
+      for(let app of this.results) {
+        if(app.status == null) { //error prevention
+          app.status = 0;
+        }
+      }
+    },
+    error => {
+      const test = 0;
     });
-
-    //do post request to get search results
-
   }
-  onDetailsClicked(event, result) {
-
-    //get listing id
-    let id : Number = result.id;
-    this.test = "id:" + id;
-    //show the details component
-  }
-
 }
 
 

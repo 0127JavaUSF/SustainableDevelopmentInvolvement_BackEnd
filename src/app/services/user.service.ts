@@ -15,4 +15,8 @@ export class UserService {
   login(user: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}/login.app`, user, { withCredentials: this.shared.withCred });
   }
+
+  logout(): Observable<Object> {
+    return this.http.get(`${this.baseUrl}/logout.app`, { withCredentials: this.shared.withCred });
+  }
 }

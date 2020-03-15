@@ -6,6 +6,7 @@ import { Application } from 'src/app/models/application';
 import { Template } from 'src/app/models/template';
 import { ApplicationAnswer } from 'src/app/models/application-answer';
 import { TemplateQuestion } from 'src/app/models/template-question';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-application',
@@ -23,11 +24,15 @@ export class CreateApplicationComponent implements OnInit {
   phone: string = "";
   email: string = "";
 
+  emailPlaceholder = "";
+  namePlaceholder = "";
+
   template: any = null;
   answers: string[] = [];
 
   constructor(
     private appService: ApplicationService,
+    private router: Router,
     private shared: SharedService,
     private templateService: TemplateService
     ) { }
@@ -49,6 +54,27 @@ export class CreateApplicationComponent implements OnInit {
   }
 
   onSubmit() {
+
+    let isValid: boolean = true;
+    if(!this.firstName.trim()) {
+      isValid = false;
+      this.namePlaceholder="Required";
+    }
+    else {
+      this.namePlaceholder="";
+    }
+
+    if(!this.email.trim()) {
+      isValid = false;
+      this.emailPlaceholder="Required";
+    }
+    else {
+      this.emailPlaceholder="";
+    }
+
+    if(!isValid) {
+      return;
+    }
 
     //create application
     let app = new Application();
@@ -83,7 +109,10 @@ export class CreateApplicationComponent implements OnInit {
 
     //create in database
     this.appService.createApplication(app).subscribe( (data: any) => {
-    }, error => {
+
+      this.router.navigate(['past-applications']);
+    },
+    error => {
       const test = 0;
     });
   }

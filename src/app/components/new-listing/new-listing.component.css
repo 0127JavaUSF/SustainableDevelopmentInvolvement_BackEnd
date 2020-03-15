@@ -3,7 +3,6 @@ form{
     background-color:aliceblue;
 }
 
-//https://www.w3schools.com/howto/howto_css_placeholder.asp 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: red;
     opacity: 1; /* Firefox */

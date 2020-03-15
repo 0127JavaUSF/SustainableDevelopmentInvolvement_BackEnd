@@ -4,6 +4,7 @@ import { Template } from 'src/app/models/template';
 import { TemplateQuestion } from 'src/app/models/template-question';
 import { SharedService } from '../../services/shared.service';
 import { Listing } from '../../models/listing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-template',
@@ -16,6 +17,7 @@ export class NewTemplateComponent implements OnInit {
   questions: string[] = [];
 
   constructor(
+    private router: Router,
     private shared: SharedService,
     private templateService: TemplateService) { }
 
@@ -71,7 +73,7 @@ export class NewTemplateComponent implements OnInit {
     //do post call
     this.templateService.createTemplate(template).subscribe( (data: any)=> {
     
-      const test = 0;    
+      this.router.navigate(['past-listings']);
     },
     error => {
       const test = 0;

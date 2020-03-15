@@ -1,5 +1,11 @@
+<app-nav-bar></app-nav-bar>
+
 <div>
   <h1 class="text-center my-5">Review Applicants</h1>
+</div>
+
+<div *ngIf="!results || results.length == 0">
+  <p class="big-text text-center">{{noneMess}}</p>
 </div>
 
 <div *ngIf="results && results.length > 0">
@@ -35,7 +41,7 @@
 
         <hr>
 
-        <div *ngFor="let a of result.answers" ng-click="onClick(event, result)">
+        <div *ngFor="let a of result.answers" ng-click="onClick($event, result)">
           <p class="big-text">{{a.question.question}}</p>
           <div class="ml-5">
             <p>{{a.answer}}</p>

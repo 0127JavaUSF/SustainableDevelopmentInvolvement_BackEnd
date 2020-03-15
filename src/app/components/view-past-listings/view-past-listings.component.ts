@@ -10,10 +10,13 @@ import { ListingService } from 'src/app/services/listing.service';
 })
 export class ViewPastListingsComponent implements OnInit {
 
+  noneMess : string = "";
   results : any;
-  selectedType : string;
 
-  constructor(private shared: SharedService, private route : Router, private listingService : ListingService) { 
+  constructor(
+    private shared: SharedService,
+    private router : Router,
+    private listingService : ListingService) { 
   
   }
 
@@ -21,7 +24,12 @@ export class ViewPastListingsComponent implements OnInit {
 
     this.listingService.getPastListing().subscribe(data => {
       this.results = data;
-    }, error => {
+
+      if(this.results == null || this.results.length == 0) {
+        this.noneMess = "None";
+      }
+    },
+    error => {
       const test = 0;
     });
   }
@@ -31,6 +39,8 @@ export class ViewPastListingsComponent implements OnInit {
     //get listing id
     this.shared.reviewAppsListingId = result.id;
 
-    this.route.navigate(['/reviewApp']);
+    this.router.navigate(['review-apps']);
+
+    event.preventDefault();
   }
 }

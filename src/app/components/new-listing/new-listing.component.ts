@@ -4,6 +4,7 @@ import { ListingService } from 'src/app/services/listing.service';
 import { ImageUrl } from 'src/app/models/image-url';
 import { Listing } from 'src/app/models/listing';
 import { VideoUrl } from 'src/app/models/video-url';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-listing',
@@ -12,6 +13,10 @@ import { VideoUrl } from 'src/app/models/video-url';
 })
 export class NewListingComponent implements OnInit {
 
+  namePlaceholder: string = "";
+  speciesPlaceholder: string = "";
+  zipPlaceholder: string = "";
+
   about: string;
   address: string;
   age: any;
@@ -19,18 +24,19 @@ export class NewListingComponent implements OnInit {
   color: any;
   fixed: any;
   imageFiles: any[] = [];
-  name: string;
+  name: string = "";
   newVideo: string = "";
   sex: any;
-  species: string;
+  species: string = "";
   state: string;
   type: any;
   videoUrls: string[] = [];
   weight: any;
-  zip: string;
+  zip: string = "";
 
   constructor(
     private listingService: ListingService,
+    private router: Router,
     private shared: SharedService) { }
 
   ngOnInit() {
@@ -71,7 +77,60 @@ export class NewListingComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onAgeChanged() {
+
+    let ageNum = Number(this.age);
+    if(ageNum == NaN) {
+      this.age = "";
+    }
+    else {
+      if(ageNum < 0) ageNum *= -1;
+      this.age = ageNum;
+    }
+  }
+
+  onWeightChanged() {
+
+    let weightNum = Number(this.weight);
+    if(weightNum == NaN) {
+      this.weight = "";
+    }
+    else {
+      if(weightNum < 0) weightNum *= -1;
+      this.weight = weightNum;
+    }
+  }
+
+  onSubmitPressed() {
+
+    let isValid: boolean = true;
+    if(!this.name.trim()) {
+      isValid = false;
+      this.namePlaceholder="Required";
+    }
+    else {
+      this.namePlaceholder="";
+    }
+
+    if(!this.species.trim()) {
+      isValid = false;
+      this.speciesPlaceholder="Required";
+    }
+    else {
+      this.speciesPlaceholder="";
+    }
+
+    if(!this.zip.trim()) {
+      isValid = false;
+      this.zipPlaceholder="Required";
+    }
+    else {
+      this.zipPlaceholder="";
+    }
+
+    if(!isValid) {
+      return;
+    }
 
     //create listing object
     let listing = new Listing();
@@ -141,7 +200,8 @@ export class NewListingComponent implements OnInit {
         i++;
       }
 
-      //user should be routed to view-past-listings component
+      this.shared.newTemplateId = newListing.id;
+      this.router.navigate(['new-template']);
     },
       error => {
         const test = 0;

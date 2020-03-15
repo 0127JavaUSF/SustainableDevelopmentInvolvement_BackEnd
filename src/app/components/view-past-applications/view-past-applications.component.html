@@ -1,31 +1,31 @@
-<p>{{test}}</p>
+<app-nav-bar></app-nav-bar>
 
-<!-- The view applicationhs page the user will come to.-->
-<!-- <p>{{test}}</p> -->
+<!-- The view applications page the user will come to.-->
 
 <h1 class="text-center my-5">View Past Applications</h1>
+
+<div *ngIf="!results || results.length == 0">
+    <p class="big-text text-center">{{noneMess}}</p>
+  </div>
+  
 <div class="container-fluid">
     <div id="divCards" class="row">
 
         <div class="p-2 col-sm-5 col-md-4 col-lg-3" *ngFor="let result of results">
             <div class="card">
-            <img *ngIf="result.imageUrls.length > 0" class='card-img-top' [src]="result.imageUrls[0].url" alt='Card image' style='width:100%'>
+            <img *ngIf="result.template.listing.imageUrls.length > 0" class='card-img-top' [src]="result.template.listing.imageUrls[0].url" alt='Card image' style='width:100%'>
             <div class="card-body" style="background-color:white;">
-                <h4 class="card-title">{{result.name}}</h4>
+                <h4 class="card-title">{{result.template.listing.name}}</h4>
 
-                <div *ngIf = "result.species" class="card-text">Species: {{result.species}}</div>
-                <div *ngIf = "result.age > 0" class="card-text">Age: {{result.age}}</div>
-                <div *ngIf = "result.sex > 0" class="card-text">Sex: {{result.sex}}</div>
-                <div *ngIf = "result.fixed" class="card-text">Fixed: {{result.fixed}}</div>
-                <div class="card-text">{{result.city + ", " + result.state + ", " + result.zipCode}}</div>
+                <span *ngIf="result.template.listing.age > 0">{{result.template.listing.age}} year old </span>
+                <span *ngIf="result.template.listing.sex > 0">{{shared.sexes[result.template.listing.sex]}} </span>
+                <span *ngIf="result.template.listing.species">{{result.template.listing.species}}</span>
+
+                <div class="card-text">{{result.template.listing.city + ", " + result.template.listing.state + ", " + result.template.listing.zipCode}}</div>
+
                 <hr>
-                <div class="card-text">Status: {{result.status}}</div>
-                <div class="card-text">Date: {{result.date}}</div>
-                
-
-                <div class="text-center mt-3">
-                <a href='#' class='btn btn-primary w-75 detailsA' (click)="onDetailsClicked(event, result)">Details</a>
-                </div>
+                <div class="card-text">Date: {{result.dateString}}</div>                
+                <div class="card-text">Status: {{shared.status[result.status]}}</div>
             </div>
             </div>
         </div>

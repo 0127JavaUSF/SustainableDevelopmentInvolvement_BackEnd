@@ -16,11 +16,15 @@ export class ApplicationService {
     return this.http.post(`${this.baseUrl}/create.app`, application, { withCredentials: this.shared.withCred });
   }
 
-  getApplication(listingId: Number): Observable<Object> {
+  getApplications(listingId: Number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/by-listing.app/?listing_id=${listingId}`, { withCredentials: this.shared.withCred });
   }
 
   getPastApplication(): Observable<Object> {
     return this.http.get(`${this.baseUrl}/by-user.app`, { withCredentials: this.shared.withCred });
-}
+  }
+
+  updateApplicationStatus(apps: Object[]): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/update-status.app`, apps, { withCredentials: this.shared.withCred });
+  }
 }

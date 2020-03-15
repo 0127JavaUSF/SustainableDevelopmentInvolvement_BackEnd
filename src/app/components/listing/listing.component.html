@@ -1,15 +1,17 @@
+<app-nav-bar></app-nav-bar>
+
 <!--this allows the heart icon next to the pet's name-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 <!--ng-bootstrap carousel-->
 <div *ngIf="result">
-    <div *ngIf="result.imageUrls && result.imageUrls.length > 0" class="container col-sm-8 col-md-7 col-lg-6">
+    <div *ngIf="result.imageUrls && result.imageUrls.length > 0" class="container">
         <ngb-carousel>
             <!--| async might need to appear after imageUrls. same with videoUrls-->
             <ng-template ngbSlide *ngFor="let image of result.imageUrls">
-                <div class="picsum-img-wrapper">
-                    <img [src]="image.url" alt="slide">
+                <div class="picsum-img-wrapper text-center">
+                    <img [src]="image.url" alt="slide" width="75%" height="50%">
                 </div>
                 <!-- <div class="carousel-caption">
                 <h3>10 seconds between slides...</h3>
@@ -51,6 +53,6 @@
         </div>
 
         <!--adopt button-->
-        <button type="button" class="btn btn-primary btn-lg w-50 mb-5" (click)="onAdoptClicked(event)">Adopt</button>
+        <button type="button" class="btn btn-primary btn-lg w-50 mb-5" (click)="onAdoptClicked($event)">Adopt</button>
     </div>
 </div>

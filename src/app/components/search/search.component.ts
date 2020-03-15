@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { ListingService } from '../../services/listing.service';
-import { from } from 'rxjs';
 import { Router } from '@angular/router';
 
 
@@ -14,7 +13,12 @@ export class SearchComponent implements OnInit {
 
   city: string = "";
   page: number = 1;
-  selectedType: string = "None";
+  state: string = "";
+  type: string = "";
+
+  searchType = "";
+  searchCity = "";
+  searchState = "";
 
   //used by pagination
   activeClass: string = "page-item active";
@@ -38,7 +42,8 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private listingService: ListingService,
-    private shared: SharedService, private router: Router) { }
+    private shared: SharedService,
+    private router: Router) { }
                                       
   ngOnInit() {
 
@@ -50,36 +55,67 @@ export class SearchComponent implements OnInit {
     // get listing id
     let id: number = result.id;
 
+    this.router.navigate(['listing', id]);
 
+    event.preventDefault();
+  }
+
+  onType() {
+  }
+
+  onCity() {
+  }
+
+  onState() {
   }
 
   onPagePrev(event) {
     this.page--;
-    this.onSearch(null);
+    this.search(null);
   }
   onPageA(event) {
 
     this.page = this.pageANum;
-    this.onSearch(null);
+    this.search(null);
   }
   onPageB(event) {
 
     this.page = this.pageBNum;
-    this.onSearch(null);
+    this.search(null);
   }
   onPageC(event) {
 
     this.page = this.pageCNum;
-    this.onSearch(null);
+    this.search(null);
   }
   onPageNext(event) {
     this.page++;
-    this.onSearch(null);
+    this.search(null);
   }
 
-  onSearch(event) {
+  onSearchPressed(event) {
 
-    this.listingService.search(this.page - 1, this.shared.typeToNumber(this.selectedType), this.city).subscribe((data: any) => {
+    //start from page 1
+    this.page = 1; 
+    this.pageANum = 1;
+    this.pageBNum = 2;
+    this.pageCNum = 3;
+
+    this.searchType = this.type;
+    this.searchCity = this.city;
+    this.searchState = this.state;
+
+    this.search(event);
+  }
+
+  search(event) {
+
+    let type_ = this.shared.typeToNumber(this.type);
+    if(type_ == 0) { //if unknown
+      type_ = -1; //map to -1 which will return all results
+    }
+
+    this.listingService.search(this.page - 1, type_, this.searchCity.trim(), this.searchState.trim()).subscribe((data: any) => {
       this.results = data.content;
 
       //save page info

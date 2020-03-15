@@ -6,17 +6,18 @@ import { Router } from '@angular/router';
 })
 export class SharedService {
 
-  public colors: string[] = ["Unknown", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "White", "Black", "Brown", "Tan", "Spotted", "Striped"];
+  public colors: string[] = ["Unknown", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "White", "Black", "Gray", "Brown", "Tan", "Spotted", "Stripped", "Pink"];
   public sexes: string[] = ["Unknown", "Male", "Female"];
-  public types: string[] = ["", "Unknown", "Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian", "Other"];
+  public types: string[] = ["Unknown", "Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian", "Other"];
   public fixed: string[] = ["unknown", "Yes", "No"];
   public status: string[] = ["not viewed", "viewed"];
+  public statusNotViewed = 0;
+  public statusViewed = 1;
 
   createAppListingId : number = 1;
-  listingId : number = 1;
   newTemplateId: number = 1;
   reviewAppsListingId: number = 1;
-  withCred: boolean = false;
+  withCred: boolean = true;
 
   //JL
   public dogColors = [
@@ -147,11 +148,11 @@ public catColors = [
     for (let i = 0; i < this.colors.length; i++) {
 
       if (color === this.colors[i]) {
-        return i + 1;
+        return i;
       }
     }
     //return unknown
-    return 1;
+    return 0;
   }
 
   public fixedToNumber(fixed: string): number {
@@ -159,11 +160,11 @@ public catColors = [
     for (let i = 0; i < this.fixed.length; i++) {
 
       if (fixed === this.fixed[i]) {
-        return i + 1;
+        return i;
       }
     }
     //return unknown
-    return 1;
+    return 0;
   }
 
   public sexToNumber(sex: string): number {
@@ -171,11 +172,11 @@ public catColors = [
     for (let i = 0; i < this.sexes.length; i++) {
 
       if (sex === this.sexes[i]) {
-        return i + 1;
+        return i;
       }
     }
     //return unknown
-    return 1;
+    return 0;
   }
 
   //this converts the type String to the Number value used in Java
@@ -184,11 +185,11 @@ public catColors = [
     for (let i = 0; i < this.types.length; i++) {
 
       if (type === this.types[i]) {
-        return i + 1;
+        return i;
       }
     }
     //return unknown
-    return 1;
+    return 0;
   }
   
   public states = [ //with the help of mshafrir
