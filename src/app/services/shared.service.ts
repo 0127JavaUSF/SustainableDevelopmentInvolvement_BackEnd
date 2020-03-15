@@ -8,7 +8,7 @@ export class SharedService {
 
   public colors: string[] = ["Unknown", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "White", "Black", "Brown", "Tan", "Spotted", "Striped"];
   public sexes: string[] = ["Unknown", "Male", "Female"];
-  public types: string[] = ["Unknown", "Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian", "Other"];
+  public types: string[] = ["", "Unknown", "Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian", "Other"];
   public fixed: string[] = ["unknown", "Yes", "No"];
   public status: string[] = ["not viewed", "viewed"];
 
