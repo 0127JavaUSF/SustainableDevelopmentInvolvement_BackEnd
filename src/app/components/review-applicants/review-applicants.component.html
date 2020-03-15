@@ -4,6 +4,10 @@
   <h1 class="text-center my-5">Review Applicants</h1>
 </div>
 
+<div *ngIf="!results || results.length == 0">
+  <p class="big-text text-center">{{noneMess}}</p>
+</div>
+
 <div *ngIf="results && results.length > 0">
 
   <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">

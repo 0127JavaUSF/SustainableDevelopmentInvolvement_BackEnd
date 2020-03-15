@@ -16,7 +16,7 @@ export class ListingService {
     return this.http.get(`${this.baseUrl}.app/?id=${id}`, { withCredentials: this.shared.withCred });
   }
 
-  search(page: Number, type: Number, city: String, state: String): Observable<Object> {
+  search(page: Number, type: any, city: String, state: String): Observable<Object> {
     return this.http.get(`${this.baseUrl}/search.app/?page=${page}&type=${type}&city=${city}&state=${state}`, { withCredentials: this.shared.withCred });
   }
 

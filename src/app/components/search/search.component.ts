@@ -110,12 +110,12 @@ export class SearchComponent implements OnInit {
 
   search(event) {
 
-    let typeNum: number = this.shared.typeToNumber(this.searchType);
-    if(typeNum == 1) { //if unknown
-      typeNum = 0; //correct
+    let type_ = this.shared.typeToNumber(this.type);
+    if(type_ == 0) { //if unknown
+      type_ = -1; //map to -1 which will return all results
     }
 
-    this.listingService.search(this.page - 1, typeNum, this.searchCity.trim(), this.searchState.trim()).subscribe((data: any) => {
+    this.listingService.search(this.page - 1, type_, this.searchCity.trim(), this.searchState.trim()).subscribe((data: any) => {
       this.results = data.content;
 
       //save page info

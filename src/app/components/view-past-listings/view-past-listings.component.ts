@@ -10,6 +10,7 @@ import { ListingService } from 'src/app/services/listing.service';
 })
 export class ViewPastListingsComponent implements OnInit {
 
+  noneMess : string = "";
   results : any;
 
   constructor(
@@ -23,7 +24,12 @@ export class ViewPastListingsComponent implements OnInit {
 
     this.listingService.getPastListing().subscribe(data => {
       this.results = data;
-    }, error => {
+
+      if(this.results == null || this.results.length == 0) {
+        this.noneMess = "None";
+      }
+    },
+    error => {
       const test = 0;
     });
   }

@@ -10,6 +10,7 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class ReviewApplicantsComponent implements OnInit {
 
+    noneMess: string = "";
     results: any = null;
 
     constructor(
@@ -25,18 +26,24 @@ export class ReviewApplicantsComponent implements OnInit {
         this.applicationService.getApplications(this.shared.reviewAppsListingId).subscribe(data => {
             this.results = data;
 
-            for(let app of this.results) {
-                app.status = this.shared.statusViewed; //set to "application viewed"
+            if(this.results == null || this.results.length == 0) {
+                this.noneMess = "None";
             }
+            else {
 
-            //save new status to DB
-            this.applicationService.updateApplicationStatus(this.results).subscribe(data => {
+                for(let app of this.results) {
+                    app.status = this.shared.statusViewed; //set to "application viewed"
+                }
 
-                const test = 0;
-            },
-            error => {
-                const test = 0;
-            });
+                //save new status to DB
+                this.applicationService.updateApplicationStatus(this.results).subscribe(data => {
+
+                    const test = 0;
+                },
+                error => {
+                    const test = 0;
+                });
+            }
         },
         error => {
             const test = 0;

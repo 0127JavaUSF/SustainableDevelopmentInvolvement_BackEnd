@@ -7,7 +7,7 @@
 
 <div class="form-group mx-auto w-50">
     <label for="type_select">Search by pet type:</label>
-    <select id="type_select" class="form-control" [(ngModel)]="selectedType" (change)="onType()">
+    <select id="type_select" class="form-control" [(ngModel)]="type" (change)="onType()">
         <!--(change)="onTypeSelected($event)">-->
         <option *ngFor="let type of shared.types">{{type}}</option>
     </select>

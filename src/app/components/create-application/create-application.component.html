@@ -3,12 +3,13 @@
 <h1 class="header text-center my-3 py-3">Adoption Application</h1>
 
 <div class="w-75 mx-auto mt-5">
-<form>
+  <form>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text">First Name</span>
       </div>
-      <input [(ngModel)]="firstName" type="text" class="form-control" name="firstname_text" [placeholder]="namePlaceholder">
+      <input [(ngModel)]="firstName" type="text" class="form-control" name="firstname_text"
+        [placeholder]="namePlaceholder">
 
       <div class="input-group-prepend">
         <span class="input-group-text">Last Name</span>
@@ -57,16 +58,18 @@
     <hr>
 
     <div *ngIf="template && template.questions && template.questions.length > 0" class="container">
-        <form>
-          <div class="form-group" *ngFor="let question of template.questions; let num = index">
-            <label for="comment">{{question.question}}</label>
-            <textarea [(ngModel)]="answers[num]" class="form-control" rows="3" id="comment" name="answer_textarea"></textarea>
-          </div>
-          <div class="text-center">
-            <button class="btn btn-primary btn-lg my-3" (click)="onSubmit()">Submit</button>
-          </div>
-        </form>
-      </div>
+      <form>
+        <div class="form-group" *ngFor="let question of template.questions; let num = index">
+          <label for="comment">{{question.question}}</label>
+          <textarea [(ngModel)]="answers[num]" class="form-control" rows="2" id="comment"
+            name="answer_textarea"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg my-3" (click)="onSubmit()">Submit</button>
+    </div>
 
   </form>
 </div>

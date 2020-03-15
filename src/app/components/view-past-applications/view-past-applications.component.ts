@@ -10,12 +10,17 @@ import { ApplicationService } from 'src/app/services/application.service';
 })
 export class ViewPastApplicationsComponent implements OnInit {
 
+  noneMess: string = "";
   results : any;
   constructor(private shared: SharedService, private route : Router, private applicationService : ApplicationService) { }
 
   ngOnInit() {
     this.applicationService.getPastApplication().subscribe(data => {
       this.results = data;
+
+      if(this.results == null || this.results.length == 0) {
+        this.noneMess = "None";
+      }
 
       for(let app of this.results) {
         if(app.status == null) { //error prevention

@@ -8,7 +8,7 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="name">Please enter your pet/friend's name:</label>
-        <input class="form-control" name="name-text" [(ngModel)]="name" [placeholder]="namePlaceholder">
+        <input class="form-control" name="name-text" [(ngModel)]="name" [placeholder]="namePlaceholder" required>
       </div>
       <div class="form-group col-md-4">
         <label for="type">Please enter its type:</label>
@@ -25,7 +25,7 @@
 
       <div class="form-group col-md-4">
         <label for="type">Please enter the breed/species:</label>
-        <input type="text" class="form-control" name="species-text" [(ngModel)]="species" [placeholder]="speciesPlaceholder">
+        <input type="text" class="form-control" name="species-text" [(ngModel)]="species" [placeholder]="speciesPlaceholder" required>
       </div>
 
     </div>
@@ -141,7 +141,7 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputZip">Zip code</label>
-        <input type="text" pattern="[0-9]{5}" class="form-control" id="inputZip" name="zip-text" [(ngModel)]="zip" [placeholder]="zipPlaceholder"> 
+        <input type="text" pattern="[0-9]{5}" class="form-control" id="inputZip" name="zip-text" [(ngModel)]="zip" [placeholder]="zipPlaceholder" required>
       </div>
     </div>
     <div class="text-center">

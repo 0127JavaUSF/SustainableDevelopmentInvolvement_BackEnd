@@ -3,6 +3,11 @@
 <!-- The view applications page the user will come to.-->
 
 <h1 class="text-center my-5">View Past Applications</h1>
+
+<div *ngIf="!results || results.length == 0">
+    <p class="big-text text-center">{{noneMess}}</p>
+  </div>
+  
 <div class="container-fluid">
     <div id="divCards" class="row">
 
