@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 })
 export class SharedService {
 
-  public colors: string[] = ["unknown", "red", "orange", "yellow", "green", "blue", "purple", "white", "black", "brown", "tan", "spotted", "striped"];
-  public sexes: string[] = ["unknown", "male", "female"];
-  public types: string[] = ["unknown", "dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian", "other"];
-  public fixed: string[] = ["unknown", "true", "false"];
+  public colors: string[] = ["Unknown", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "White", "Black", "Brown", "Tan", "Spotted", "Striped"];
+  public sexes: string[] = ["Unknown", "Male", "Female"];
+  public types: string[] = ["", "Unknown", "Dog", "Cat", "Bird", "Rodent", "Fish", "Reptile", "Amphibian", "Other"];
+  public fixed: string[] = ["unknown", "Yes", "No"];
   public status: string[] = ["not viewed", "viewed"];
 
   createAppListingId : number = 1;
