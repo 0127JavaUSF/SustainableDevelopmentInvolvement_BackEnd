@@ -11,9 +11,11 @@ import { ListingService } from 'src/app/services/listing.service';
 export class ViewPastListingsComponent implements OnInit {
 
   results : any;
-  selectedType : string;
 
-  constructor(private shared: SharedService, private route : Router, private listingService : ListingService) { 
+  constructor(
+    private shared: SharedService,
+    private router : Router,
+    private listingService : ListingService) { 
   
   }
 
@@ -31,6 +33,8 @@ export class ViewPastListingsComponent implements OnInit {
     //get listing id
     this.shared.reviewAppsListingId = result.id;
 
-    this.route.navigate(['/reviewApp']);
+    this.router.navigate(['review-apps']);
+
+    event.preventDefault();
   }
 }

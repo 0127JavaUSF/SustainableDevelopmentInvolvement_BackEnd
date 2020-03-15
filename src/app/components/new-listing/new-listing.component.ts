@@ -4,6 +4,7 @@ import { ListingService } from 'src/app/services/listing.service';
 import { ImageUrl } from 'src/app/models/image-url';
 import { Listing } from 'src/app/models/listing';
 import { VideoUrl } from 'src/app/models/video-url';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-listing',
@@ -31,6 +32,7 @@ export class NewListingComponent implements OnInit {
 
   constructor(
     private listingService: ListingService,
+    private router: Router,
     private shared: SharedService) { }
 
   ngOnInit() {
@@ -141,7 +143,8 @@ export class NewListingComponent implements OnInit {
         i++;
       }
 
-      //user should be routed to view-past-listings component
+      this.shared.newTemplateId = newListing.id;
+      this.router.navigate(['new-template']);
     },
       error => {
         const test = 0;

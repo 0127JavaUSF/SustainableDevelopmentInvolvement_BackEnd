@@ -22,10 +22,21 @@ export class ReviewApplicantsComponent implements OnInit {
     };
     ngOnInit() {
 
-        this.applicationService.getApplication(this.shared.reviewAppsListingId).subscribe(data => {
+        this.applicationService.getApplications(this.shared.reviewAppsListingId).subscribe(data => {
             this.results = data;
 
-            const test = 0;
+            for(let app of this.results) {
+                app.status = this.shared.statusViewed; //set to "application viewed"
+            }
+
+            //save new status to DB
+            this.applicationService.updateApplicationStatus(this.results).subscribe(data => {
+
+                const test = 0;
+            },
+            error => {
+                const test = 0;
+            });
         },
         error => {
             const test = 0;

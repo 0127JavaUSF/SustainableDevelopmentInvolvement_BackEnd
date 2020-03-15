@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from '../../services/shared.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -17,10 +17,10 @@ export class ListingComponent implements OnInit {
   constructor(
     private listingService: ListingService,
     config: NgbCarouselConfig,
-    private sanitizer: DomSanitizer,
     private shared: SharedService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sanitizer: Sanitizer
   ) {
 
     // customize default values of carousels used by this component tree
@@ -30,29 +30,26 @@ export class ListingComponent implements OnInit {
     config.pauseOnHover = true;
   }
 
+  id: any;
   result: any;
 
   ngOnInit() {
 
-    //get id from url
-    this.route.queryParams.subscribe(params => {
-      if(!params.id) {
-        return;
-      }
+    //get the route parameter
+    this.id = this.route.snapshot.paramMap.get("id");
 
-      
-
-      this.listingService.getListing(params.id).subscribe(data => {
-        this.result = data;
-      },
+    this.listingService.getListing(this.id).subscribe(data => {
+      this.result = data;
+    },
       error => {
         const test = 0;
       });
-    })
   }
 
   onAdoptClicked(event) {
 
-    //this.router.navigate(['listing', id]);
+    //use service to shared id with new application page
+    this.shared.createAppListingId = this.id;
+    this.router.navigate(['new-application']);
   }
 }

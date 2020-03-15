@@ -11,9 +11,10 @@ export class SharedService {
   public types: string[] = ["unknown", "dog", "cat", "bird", "rodent", "fish", "reptile", "amphibian", "other"];
   public fixed: string[] = ["unknown", "true", "false"];
   public status: string[] = ["not viewed", "viewed"];
+  public statusNotViewed = 0;
+  public statusViewed = 1;
 
   createAppListingId : number = 1;
-  listingId : number = 1;
   newTemplateId: number = 1;
   reviewAppsListingId: number = 1;
   withCred: boolean = false;
