@@ -13,6 +13,10 @@ import { Router } from '@angular/router';
 })
 export class NewListingComponent implements OnInit {
 
+  namePlaceholder: string = "";
+  speciesPlaceholder: string = "";
+  zipPlaceholder: string = "";
+
   about: string;
   address: string;
   age: any;
@@ -20,15 +24,15 @@ export class NewListingComponent implements OnInit {
   color: any;
   fixed: any;
   imageFiles: any[] = [];
-  name: string;
+  name: string = "";
   newVideo: string = "";
   sex: any;
-  species: string;
+  species: string = "";
   state: string;
   type: any;
   videoUrls: string[] = [];
   weight: any;
-  zip: string;
+  zip: string = "";
 
   constructor(
     private listingService: ListingService,
@@ -73,7 +77,60 @@ export class NewListingComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onAgeChanged() {
+
+    let ageNum = Number(this.age);
+    if(ageNum == NaN) {
+      this.age = "";
+    }
+    else {
+      if(ageNum < 0) ageNum *= -1;
+      this.age = ageNum;
+    }
+  }
+
+  onWeightChanged() {
+
+    let weightNum = Number(this.weight);
+    if(weightNum == NaN) {
+      this.weight = "";
+    }
+    else {
+      if(weightNum < 0) weightNum *= -1;
+      this.weight = weightNum;
+    }
+  }
+
+  onSubmitPressed() {
+
+    let isValid: boolean = true;
+    if(!this.name.trim()) {
+      isValid = false;
+      this.namePlaceholder="Required";
+    }
+    else {
+      this.namePlaceholder="";
+    }
+
+    if(!this.species.trim()) {
+      isValid = false;
+      this.speciesPlaceholder="Required";
+    }
+    else {
+      this.speciesPlaceholder="";
+    }
+
+    if(!this.zip.trim()) {
+      isValid = false;
+      this.zipPlaceholder="Required";
+    }
+    else {
+      this.zipPlaceholder="";
+    }
+
+    if(!isValid) {
+      return;
+    }
 
     //create listing object
     let listing = new Listing();

@@ -28,7 +28,7 @@ export class ListingService {
     return this.http.post(`${this.baseUrl}/create.app`, listing, { withCredentials: this.shared.withCred });
   }
 
-  uploadAWSS3(uploadUrl, contentType, file): Observable<any> { //this will be used to upload all csv files to AWS S3
+  uploadAWSS3(uploadUrl, contentType, file): Observable<any> { //this will be used to upload all csv  files to AWS S3
 
     const headers = new HttpHeaders({ 'Content-Type': contentType });
     const req = new HttpRequest('PUT', uploadUrl, file,

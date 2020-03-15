@@ -8,7 +8,7 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="name">Please enter your pet/friend's name:</label>
-        <input class="form-control" name="name-text" [(ngModel)]="name">
+        <input class="form-control" name="name-text" [(ngModel)]="name" [placeholder]="namePlaceholder">
       </div>
       <div class="form-group col-md-4">
         <label for="type">Please enter its type:</label>
@@ -25,24 +25,43 @@
 
       <div class="form-group col-md-4">
         <label for="type">Please enter the breed/species:</label>
-        <input type="text" class="form-control" name="species-text" [(ngModel)]="species">
+        <input type="text" class="form-control" name="species-text" [(ngModel)]="species" [placeholder]="speciesPlaceholder">
       </div>
 
     </div>
     <div class="form-row">
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-4">        
         <label for="inputColor">Color</label>
         <select id="inputColor" class="form-control" name="color-select" [(ngModel)]="color">
           <option *ngFor="let color of shared.colors">{{color}}</option>
-        </select>
+        </select> 
+        
+     <!-- <br/>
+      {{type}}
+        <div *ngIf="'Dog'=='Dog'; then thenBlock else elseBlock">
+          within *ngIf
+          <ng-template #thenBlock>
+            Dog type
+            <select name="dog-colors" [(ngModel)]="color">
+              <option *ngFor="let color of shared.dogColors">{{color.name}}</option>
+            </select> 
+          </ng-template>
+          <ng-template #elseBlock>
+            Not dog type
+              <select id="inputColor" class="form-control" name="color-select" [(ngModel)]="color">
+                <option *ngFor="let color of shared.colors">{{color}}</option>
+              </select>
+          </ng-template>
+        </div> -->
+        
       </div>
       <div class="form-group col-md-4">
         <label for="inputAge">Age</label>
-        <input type="number" min="0" class="form-control" id="inputAge" name="age-number" [(ngModel)]="age">
+        <input type="number" min="0" class="form-control" id="inputAge" name="age-number" [(ngModel)]="age" (focusout)="onAgeChanged()">
       </div>
       <div class="form-group col-md-4">
         <label for="inputWeight">Weight (in lbs)</label>
-        <input type="number" min="0" class="form-control" id="inputWeight" name="weight-number" [(ngModel)]="weight">
+        <input type="number" min="0" class="form-control" id="inputWeight" name="weight-number" [(ngModel)]="weight" (focusout)="onWeightChanged()">
       </div>
     </div>
     <div class="form-row">
@@ -121,12 +140,12 @@
       </select> -->
       </div>
       <div class="form-group col-md-4">
-        <label for="inputZip">Zip</label>
-        <input type="text" pattern="[0-9]{5}"  class="form-control" id="inputZip" name="zip-text" [(ngModel)]="zip">
+        <label for="inputZip">Zip code</label>
+        <input type="text" pattern="[0-9]{5}" class="form-control" id="inputZip" name="zip-text" [(ngModel)]="zip" [placeholder]="zipPlaceholder"> 
       </div>
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary btn-lg w-25" (click)="onSubmit()">Submit</button>
+      <button class="btn btn-primary btn-lg w-25" (click)="onSubmitPressed($event)">Submit</button>
     </div>
   </form>
 </div>
