@@ -14,9 +14,12 @@ export class SharedService {
   public statusNotViewed = 0;
   public statusViewed = 1;
 
-  createAppListingId : number = 1;
-  newTemplateId: number = 1;
-  reviewAppsListingId: number = 1;
+  //these are passed to a component
+  //ideally we should be using LocalStorage or SessionStorage so they presist if user refreshes the page
+  //but due to time constraints, they are in the service
+  createAppListingId : number = 0;
+  newTemplateId: number = 0;
+  reviewAppsListingId: number = 0;
   withCred: boolean = true;
 
   //JL
