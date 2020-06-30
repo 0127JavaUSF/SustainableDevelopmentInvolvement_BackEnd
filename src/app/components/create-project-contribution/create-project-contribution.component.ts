@@ -14,11 +14,13 @@ export class CreateProjectContributionComponent implements OnInit {
 
   constructor(private goalService:GoalsService, private router:Router) { }
 
-  result:any;
+  results:any;
+  firstName:string;
+  lastName:string;
 
   ngOnInit() {
     this.goalService.getAllGoals().subscribe(
-        data => {this.result = data;}, 
+        data => {this.results = data;}, 
         error => {const test = 0;}
     );
   }
