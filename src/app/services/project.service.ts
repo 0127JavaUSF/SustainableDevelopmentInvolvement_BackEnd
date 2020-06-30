@@ -15,4 +15,9 @@ export class ProjectService {
   createProjectReference(project:Object): Observable<Object>{
     return this.http.post(`${this.base_url}/projects`, project );
   }
+
+  getAllProjects():Observable<any>{
+    
+  }
+
 }
