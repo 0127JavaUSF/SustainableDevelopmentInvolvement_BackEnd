@@ -17,7 +17,7 @@ export class ProjectService {
   }
 
   getAllProjects():Observable<any>{
-    
+    return this.http.get(`${this.base_url}/projects`);
   }
 
 }

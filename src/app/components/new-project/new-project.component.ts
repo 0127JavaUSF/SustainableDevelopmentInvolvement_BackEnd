@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GoalsService } from 'src/app/services/goals.service';
+import { GoalService } from 'src/app/services/goals.service';
 import { ProjectService } from 'src/app/services/project.service';
 import { Observable } from 'rxjs';
 import { Project } from 'src/app/models/Project';
@@ -12,9 +12,10 @@ import { Router} from '@angular/router';
 })
 export class NewProjectComponent implements OnInit {
 
-  constructor(private goalService:GoalsService, private projectService:ProjectService, private router:Router) { }
+  constructor(private goalService:GoalService, private projectService:ProjectService, private router:Router) { }
 
-  private results:any;
+  private goalsResults:any
+  private projectResults:any;
   private id:number;
   private name:string;
   private description:string;
@@ -25,7 +26,7 @@ export class NewProjectComponent implements OnInit {
 
   ngOnInit() {
     this.goalService.getAllGoals().subscribe(
-      data => {this.results = data;},
+      data => {this.goalsResults = data;},
       error => {const test=0;}
     );
     
@@ -43,7 +44,7 @@ export class NewProjectComponent implements OnInit {
     console.log("project in createProjectReference",project);
 
     this.projectService.createProjectReference(project).subscribe(
-      data => {this.results = data;},
+      data => {this.projectResults = data;},
       error => {const test=0;}
     );
     this.router.navigate(['/new-project-contribution']);

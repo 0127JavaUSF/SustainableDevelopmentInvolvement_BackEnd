@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GoalsService {
+export class GoalService {
 
   private base_url = "http://localhost:8080/goals";
 

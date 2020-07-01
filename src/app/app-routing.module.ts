@@ -5,7 +5,6 @@ import {NewProjectComponent} from './components/new-project/new-project.componen
 
 const routes: Routes = [
   
-  /* From Furever Home project */
   { path: '', component: CreateProjectContributionComponent},
   /* Sustainable Development Projects */
   {path: 'new-project-contribution', component: CreateProjectContributionComponent},

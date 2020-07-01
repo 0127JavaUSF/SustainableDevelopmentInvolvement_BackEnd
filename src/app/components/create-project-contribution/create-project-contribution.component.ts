@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GoalsService } from 'src/app/services/goals.service';
+import { ProjectService } from 'src/app/services/project.service';
 import {Router} from '@angular/router';
 
 /* NB: Code inspired from the code for the Furever Home project.
@@ -12,17 +12,19 @@ I do not master yet the code used in this application. */
 })
 export class CreateProjectContributionComponent implements OnInit {
 
-  constructor(private goalService:GoalsService, private router:Router) { }
+  constructor(private projectService:ProjectService, private router:Router) { }
 
-  resultsGoals:any;
+  resultsProjects:any;
   firstName:string;
   lastName:string;
 
   ngOnInit() {
-    this.goalService.resultsGoals().subscribe(
-        data => {this.results = data;}, 
+    this.projectService.getAllProjects().subscribe(
+        data => {this.resultsProjects = data;},         
         error => {const test = 0;}
     );
+    console.log("resultProjects", this.resultsProjects);
+    
   }
 
   onNewProjectClicked(event){

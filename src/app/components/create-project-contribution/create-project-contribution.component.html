@@ -1,10 +1,9 @@
 
-<!--  https://getbootstrap.com/docs/4.5/components/forms/  -->
-<h2>New Contribution to a Sustainable Development Goal.</h2>
 <form>
+  <h2>New Contribution to a Sustainable Development Goal.</h2>
     <div class="row">
       <div class="col">
-        <input type="text" aria-label="Enter first name here."  class="form-control"  
+        <input type="text" aria-label="Enter first name here."  class="form-control padding-control"  
         [(ngModel)]="firstName" name="firstName" placeholder="First name">
       </div>
       <div class="col">
@@ -12,29 +11,22 @@
         [(ngModel)]="lastName" name="lastName" placeholder="Last name">
       </div>
     </div>
+    
     <div class="row">
       <div class="col">
-        <div class="dropdown show">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
-          aria-label="Drop-down button used to select a sustainable project among those 
+        <h3>Please, click to select a project or <a href="/new-project">create a new project description</a></h3>.
+       <!-- Standard Dropdown with custom dropdown class appended -->
+          <select class="custom-dropdown"  aria-label="Drop-down button used to select a sustainable project among those 
           already present in the database. The dropdown menu also offers the opportunity 
           to add a new project description in the database.">
-          Please, click to select a project or to enter a new project description.
-          </button>
-          <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
-            <a *ngFor="let result of results" class="dropdown-item" >Action</a>
-            
-            <a class="dropdown-item" href="/new-project">Create a new project description</a>
-          </div>
+            <option  *ngFor="let result of resultsProjects">{{result.name}}</option>
+            <option></option>           
+          </select>
         </div>
-      </div>
     </div>
     <div class="row">
       <div class="col">
-        <button class="btn btn-secondary" type="submit" 
-        aria-label="Button to click to submit the information entered in the form.">
-        Click to submit the information.</button>
+        
       </div>
     </div>
     
