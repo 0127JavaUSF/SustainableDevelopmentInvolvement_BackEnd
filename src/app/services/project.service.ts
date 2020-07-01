@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {SD_StringExternalisation} from 'src/app/models/StringExternalisation';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectService {  
+export class ProjectService {
 
-  constructor(private http:HttpClient) { }
+  private base_url = "http://localhost:8080";
 
-  private  stringExternalisation  = new SD_StringExternalisation();
-  private base_url = this.stringExternalisation.base_url; 
-  
+    constructor(private http:HttpClient) { }
+
+    
   createProjectReference(project:Object): Observable<Object>{
     return this.http.post(`${this.base_url}/projects`, project );
   }
