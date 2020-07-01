@@ -16,17 +16,18 @@
       <div class="col">
         <h3>Please, click to select a project or <a href="/new-project">create a new project description</a></h3>.
        <!-- Standard Dropdown with custom dropdown class appended -->
-          <select class="custom-dropdown"  aria-label="Drop-down button used to select a sustainable project among those 
+          <select class="custom-dropdown"  [(ngModel)]="project_Id" name="project_Id"
+          aria-label="Drop-down button used to select a sustainable project among those 
           already present in the database. The dropdown menu also offers the opportunity 
           to add a new project description in the database.">
-            <option  *ngFor="let result of resultsProjects">{{result.name}}</option>
-            <option></option>           
+            <option  *ngFor="let result of allProjectsResults" value={{result.id}}>{{result.name}}</option>                      
           </select>
         </div>
     </div>
     <div class="row">
       <div class="col">
-        
+        <input type="submit" aria-label="Button used to submit the data" 
+        value="Click on the button to submit the data"  (click)="createProjectContribution()"/>
       </div>
     </div>
     
