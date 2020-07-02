@@ -49,7 +49,11 @@ export class CreateProjectContributionComponent implements OnInit {
         error => {const test=0;}
     );
 
+    document.getElementsByClassName("closeAlert")[0].setAttribute("style","display:block;");
+
     this.router.navigate(['']);
+
+    
 
   }
 

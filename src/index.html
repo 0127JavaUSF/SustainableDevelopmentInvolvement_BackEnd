@@ -9,6 +9,7 @@
   <!-- References for the accessible framework Assets (compatible with Bootstrap) -->
   <script src="assets/Assets 3.4.1/modernizr/modernizr.js"></script>
   <script src="https://kit.fontawesome.com/f87d9a7223.js" crossorigin="anonymous"></script>
+  <script src="assets/customScripts/accessibilityFeatures.js"></script>
     <!-- Core stylesheets -->
   <link href="assets/Assets 3.4.1/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/Assets 3.4.1/font-awesome/font-awesome.css" rel="stylesheet">
@@ -18,27 +19,85 @@
   <link href="assets/Assets 3.4.1/globalassets/styles/widgets/dropdowns.css" rel="stylesheet">
   <link href="assets/Assets 3.4.1/globalassets/styles/widgets/buttons.css" rel="stylesheet">
   <link href="assets/Assets 3.4.1/globalassets/styles/widgets/alerts.css" rel="stylesheet">
- 
-
-
+  
 
 </head>
 <body>
-  <a href="/" aria-label="link to the home page"><img alt="Revature's logo" src="./assets/images/Revature/logo.png"></img></a>
-  <h1 id="title"> Revature's Employees Involvement in Sustainable Development</h1>
+    <div class="responsiveAccessibilityFeatures">
+      <div class="fontSizeFeatures accessibilityFeatures">
+        <a onclick="changeFontSize(10)" >
+          <div class="magnify"> + Click to increase the font size.</div>
+        </a>
+        
+        <a onclick="changeFontSize(-10)">
+          <div class="magnify"> - Click to decrease the font size.</div>
+        </a>
+      </div>
+      <div class="fontChangeFeature accessibilityFeatures">
+        <div class="fontSelectionText">Click to select a different font.          
+        </div>          
+        <select class="custom-dropdown fontChoice" 
+          aria-label="Dropdown menu used to select a different font">
+            <option>Arial,Sans-serif</option>
+            <option>Courrier,monospace</option>
+            <option></option>
+            <option></option>
+          </select>
+      </div>
+    </div>
+    <div class="logo">
+      <a href="/" aria-label="link to the home page"><img alt="Revature's logo" src="./assets/images/Revature/logo.png"></img></a>
+    </div>
+<!--
+  <div >
+    <table id="navbar" class="biggerFont">
+      <tr>
+        <th colspan="3" class="accessibilityFeatures"> Accessibility features</th>
+      </tr>
+      <tr>        
+        <td class="fontSizeChange accessibilityFeatures" aria-label="Links to click to increase or decrease the font size">
+          <a onclick="changeFontSize(10)" >
+            <div class="magnify"> + Click to increase the font size.</div>
+          </a>
+          <br>
+          <a onclick="changeFontSize(-10)">
+            <div class="magnify"> - Click to decrease the font size.</div>
+          </a>
+        </td > 
+        <td class="accessibilityFeatures">
+          <div class="fontSelectionText">Click to select a different font.</div>          
+          <select class="custom-dropdown fontChoice" 
+          aria-label="Dropdown menu used to select a different font">
+            <option>Arial,Sans-serif</option>
+            <option>Courrier,monospace</option>
+            <option></option>
+            <option></option>
+          </select>
+
+        </td>       
+      </tr>
+      <tr>
+        <td colspan="3" class="logo">
+          <a href="/" aria-label="link to the home page"><img alt="Revature's logo" src="./assets/images/Revature/logo.png"></img></a>
+        </td>
+      </tr>
+  </table>
+  -->
+  </div>
+    <h1 id="title"> Revature's Employees Involvement in Sustainable Development</h1>
   <br>
-  <div class="clearfix alert alert-success">
+  <div class="clearfix alert alert-success closeAlert" onclick="this.style.display='none'">
     <div class="iconSpan pull-left">
       <em class="fa fa-check-circle fa-2x white" style="font-family: 'FontAwesome' !important;"></em>
-      <span class="adobeBlank biggerFont">Success icon</span>
+      <span class="adobeBlank biggerFont"></span>
     </div>
     <div class="alertContent">
-      <p class="alertHeading2 biggerFont">
-        <strong>SUCCESS:</strong>Successful update of the database.
+      <p class="alertHeading2 biggerFont" >
+        <strong>SUCCESS:</strong>Database update.
       </p>
     </div>
     <button class="fa fa-times-circle fa-2x example2 white">
-      <span class="adobeBlank" aria-hidden="true" biggerFont>Close icon</span>
+      <span class="adobeBlank" aria-hidden="true" biggerFont>Close</span>
       <span class="sr-only" biggerFont>Close success alert message</span>
     </button>
   </div> 
