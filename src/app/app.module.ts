@@ -9,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CreateProjectContributionComponent } from './components/create-project-contribution/create-project-contribution.component';
 import { NewProjectComponent } from './components/new-project/new-project.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 
@@ -18,6 +19,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     CreateProjectContributionComponent,
     NewProjectComponent,
     LandingPageComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
