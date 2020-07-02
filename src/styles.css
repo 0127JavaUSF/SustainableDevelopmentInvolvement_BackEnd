@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 2.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #474c55;
+}
+
+#title{
+    text-align: center;
+}
+
+ /* Important to overide negative margins from bootstrap.  */
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+h1,h2,h3 {    
+    font-weight: 700;        
+}
+h1{   
+    font-size: 1.75em;
+}
+
+h2{   
+    font-size: 1.50em;    
+}
+
+h3{
+    font-size: 1.25em;
+    margin-bottom: 0;
+}
+
+/* Accessibility: bigger fonts for the placeholders */
+input[placeholder], select[placeholder], textarea[placeholder], input[value], select {
+    font-size: 1.25em;;
+}
+
+
