@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { CreateProjectContributionComponent } from './components/create-project-contribution/create-project-contribution.component';
 import { NewProjectComponent } from './components/new-project/new-project.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 
 
@@ -16,6 +17,7 @@ import { NewProjectComponent } from './components/new-project/new-project.compon
     AppComponent,   
     CreateProjectContributionComponent,
     NewProjectComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,8 @@
     </div>
     <div class="row">
         <div class="col">
-            <select [(ngModel)]="goal_Id" name="goal_Id" aria-placeholder="Type of sustainable development goal" >                
+            <select [(ngModel)]="goal_Id" name="goal_Id" 
+            aria-placeholder="Type of sustainable development goal" required>                
                 <option *ngFor="let result of goalsResults" value={{result.id}}>{{result.goalName}} </option>                
             </select>
         </div>
