@@ -49,6 +49,8 @@ export class CreateProjectContributionComponent implements OnInit {
         error => {const test=0;}
     );
 
+    this.router.navigate(['']);
+
   }
 
 }
