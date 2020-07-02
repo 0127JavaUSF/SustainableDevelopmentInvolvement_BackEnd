@@ -7,23 +7,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- References for the accessible framework Assets (compatible with Bootstrap) -->
-  <script src="./assets/Assets 3.4.1/modernizr/modernizr.js"></script>
+  <script src="assets/Assets 3.4.1/modernizr/modernizr.js"></script>
+  <script src="https://kit.fontawesome.com/f87d9a7223.js" crossorigin="anonymous"></script>
     <!-- Core stylesheets -->
-  <link href="./assets/Assets 3.4.1/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./assets/Assets 3.4.1/font-awesome/font-awesome.css" rel="stylesheet">
-  <link href="./assets/Assets 3.4.1/globalassets/styles/adobeBlank/adobe-blank.css" rel="stylesheet">
+  <link href="assets/Assets 3.4.1/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/Assets 3.4.1/font-awesome/font-awesome.css" rel="stylesheet">
+  <link href="assets/Assets 3.4.1/globalassets/styles/adobeBlank/adobe-blank.css" rel="stylesheet">
   <link href="assets/Assets 3.4.1/jqueryui/themes/base/jquery-ui.css" rel="stylesheet">
     <!-- Global Assets stylesheets  -->
   <link href="assets/Assets 3.4.1/globalassets/styles/widgets/dropdowns.css" rel="stylesheet">
   <link href="assets/Assets 3.4.1/globalassets/styles/widgets/buttons.css" rel="stylesheet">
-  
+  <link href="assets/Assets 3.4.1/globalassets/styles/widgets/alerts.css" rel="stylesheet">
+ 
+
 
 
 </head>
 <body>
-  <a href="/"><img alt="Revature's logo" src="./assets/images/Revature/logo.png"></img></a>
+  <a href="/" aria-label="link to the home page"><img alt="Revature's logo" src="./assets/images/Revature/logo.png"></img></a>
   <h1 id="title"> Revature's Employees Involvement in Sustainable Development</h1>
   <br>
+  <div class="clearfix alert alert-success">
+    <div class="iconSpan pull-left">
+      <em class="fa fa-check-circle fa-2x white" style="font-family: 'FontAwesome' !important;"></em>
+      <span class="adobeBlank biggerFont">Success icon</span>
+    </div>
+    <div class="alertContent">
+      <p class="alertHeading2 biggerFont">
+        <strong>SUCCESS:</strong>Successful update of the database.
+      </p>
+    </div>
+    <button class="fa fa-times-circle fa-2x example2 white">
+      <span class="adobeBlank" aria-hidden="true" biggerFont>Close icon</span>
+      <span class="sr-only" biggerFont>Close success alert message</span>
+    </button>
+  </div> 
   <app-root></app-root>
 </body>
 </html>

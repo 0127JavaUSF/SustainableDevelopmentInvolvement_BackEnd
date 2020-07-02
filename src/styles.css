@@ -31,9 +31,15 @@ h3{
     margin-bottom: 0;
 }
 
+/* */
+
 /* Accessibility: bigger fonts for the placeholders */
+.biggerFont{
+    font-size: 1.25em !important;
+}
+
 input[placeholder], select[placeholder], textarea[placeholder], input[value], select {
-    font-size: 1.25em;;
+    font-size: 1.25em;
 }
 
 
