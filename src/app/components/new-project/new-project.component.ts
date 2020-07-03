@@ -48,6 +48,8 @@ export class NewProjectComponent implements OnInit {
       error => {const test=0;}
     );
     this.router.navigate(['/new-project-contribution']);
+
+    document.getElementsByClassName('closeAlert')[0].setAttribute("style","display:block;");
   }
 
 }

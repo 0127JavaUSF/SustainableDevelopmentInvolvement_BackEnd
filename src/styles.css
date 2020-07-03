@@ -5,6 +5,90 @@ body{
     color: #474c55;
 }
 
+/* Full width navigation bar*/
+#navbar{
+    width:100%;    
+}
+
+.responsiveAccessibilityFeatures{
+    width:100%;
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    background-color: lightgrey;
+    font-size: 1em !important; 
+    
+    
+}
+
+div.fontSizeFeatures{
+    border: 1.5em;    
+}
+.fontSizeFeatures{
+    flex-grow:1;
+    text-align: center;
+}
+
+div.fontChangeFeature{
+    border: 1.5em;
+    margin-right: .5em;
+}
+.fontChangeFeature{
+    flex-grow:1;
+}
+
+.accessibilityFeatures{
+    background-color: lightgrey;
+    font-size: 1em !important;    
+    text-align: center !important;   
+}
+/*
+.fontChoice{
+    text-align: center;
+    background-color: yellow;
+}
+*/
+
+.logo{
+    text-align:center;
+    padding: 0.5em !important; 
+    background-image: linear-gradient(lightgrey,white);
+}
+/*
+td.accessibilityFeatures{
+    vertical-align: bottom;
+}*/
+
+/*overriding Assets dropdown default setting*/
+select.custom-dropdown.fontChoice{
+    margin-bottom:0 !important;   
+    text-align:center !important;
+    background-color: yellow;
+    border-color: black;
+    font-weight: 900;
+}
+
+/* Spacing between text above dropdown and dropdown*/
+.fontSelectionText{
+    margin-bottom: 0.5em;
+}
+
+/* Table header is centered */
+th.accessibilityFeatures{
+    text-align: center !important;   
+}
+
+
+
+.fontSizeChange{
+    text-align: center;    
+}
+
+
+.magnify:hover{
+    transform: scale(1.1);
+}
+
 #title{
     text-align: center;
 }
@@ -28,12 +112,25 @@ h2{
 
 h3{
     font-size: 1.25em;
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
+}
+
+.closeAlert{
+    display:none;
 }
 
 /* Accessibility: bigger fonts for the placeholders */
 input[placeholder], select[placeholder], textarea[placeholder], input[value], select {
-    font-size: 1.25em;;
+    font-size: 1.25em !important;
+}
+
+.accessibilityFeatures {
+    font-size: 2.0em !important;
+}
+
+/* Color ratio and zoom over link*/
+.magnify{
+    color: #175e9b;/*for contrast ratio*/
 }
 
 
