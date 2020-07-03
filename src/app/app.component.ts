@@ -9,7 +9,7 @@ export class AppComponent {
   fontToDisplay:string;
 
 changeFont(){  
-  let bodyElement=document.getElementsByTagName("body")[0];
+  let bodyElement=document.getElementById("body");
   bodyElement.style.setProperty("font-family",this.fontToDisplay,"important");
   }
 

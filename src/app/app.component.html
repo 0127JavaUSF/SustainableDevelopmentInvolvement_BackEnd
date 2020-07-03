@@ -1,33 +1,3 @@
-<div class="responsiveAccessibilityFeatures">
-    <div class="fontSizeFeatures accessibilityFeatures">
-      <a onclick="changeFontSize(10)" >
-        <div class="magnify"> + Click to increase the font size.</div>
-      </a>
-      
-      <a onclick="changeFontSize(-10)">
-        <div class="magnify"> - Click to decrease the font size.</div>
-      </a>
-    </div>
-
-    
-    <div class="fontChangeFeature accessibilityFeatures">
-      <div class="fontSelectionText">Click to select a different font.          
-      </div>          
-      <select [(ngModel)]="fontToDisplay"  name="fontToDisplay" class="custom-dropdown fontChoice" 
-        aria-label="Dropdown menu used to select a different font" (change)="changeFont()">
-            <option class="fontOption" value='"Arial,Sans-serif"' selected
-          aria-label="Option to select an arial, or if not available, a sans-serif font">Arial,Sans-serif</option>
-            <option class="fontOption" value='"Courrier,Monospace"'
-            aria-label="Option to select an courrier, or if not available, a monospace font">Courrier,Monospace</option>
-            <option class="fontOption" value='"Helvetica, Sans-serif"'
-            aria-label="Option to select an Helvetica, or if not available, a sans-serif font">Helvetica, Sans-serif</option>
-            <option class="fontOption" value='"Verdana, Sans-serif"'
-            aria-label="Option to select a Verdana, or if not available, a sans-serif font">Verdana, Sans-serif</option>
-            <option value='"Comic"'>Comic</option>
-        </select>
-    </div>
-</div>
-
   <div class="logo">
     <a href="/" aria-label="link to the home page"><img alt="Revature's logo" src="./assets/images/Revature/logo.png"></a>
   </div>
