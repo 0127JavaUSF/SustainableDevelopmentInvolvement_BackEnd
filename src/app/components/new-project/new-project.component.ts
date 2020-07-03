@@ -49,7 +49,7 @@ export class NewProjectComponent implements OnInit {
     );
     this.router.navigate(['/new-project-contribution']);
 
-    document.getElementsByClassName('closeAlert')[0].setAttribute("style","display:block;");
+    document.getElementsByClassName('closeAlert')[0].setAttribute("style","display:block;visibility:visible;");
   }
 
 }

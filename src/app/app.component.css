@@ -1,0 +1,97 @@
+
+/* Full width navigation bar*/
+#navbar{
+    width:100%;    
+}
+
+.responsiveAccessibilityFeatures{
+    width:100%;
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    background-color: lightgrey;
+    font-size: 1em !important;    
+}
+
+div.fontSizeFeatures{
+    border: 1.5em;    
+}
+.fontSizeFeatures{
+    flex-grow:1;
+    text-align: center;
+}
+
+div.fontChangeFeature{
+    border: 1.5em;
+    margin-right: .5em;
+}
+.fontChangeFeature{
+    flex-grow:1;
+}
+
+.accessibilityFeatures{
+    background-color: lightgrey;
+    font-size: 2em !important;    
+    text-align: center !important;   
+}
+
+.fontOption{
+    font-size: 1em !important;
+}
+
+.logo{
+    text-align:center;
+    padding: 0.5em !important; 
+    background-image: linear-gradient(lightgrey,white);
+}
+/*
+
+/* Spacing between text above dropdown and dropdown*/
+.fontSelectionText{
+    margin-bottom: 0.5em;
+}
+
+/*
+.fontSizeChange{
+    text-align: center;    
+}
+*/
+
+.magnify:hover{
+    transform: scale(1.1);
+}
+
+#title{
+    text-align: center;
+}
+
+h1,h2,h3 {    
+    font-weight: 700;        
+}
+h1{   
+    font-size: 1.75em;
+}
+
+h2{   
+    font-size: 1.50em;    
+}
+
+h3{
+    font-size: 1.25em;
+    /*margin-bottom: 0;*/
+}
+
+.closeAlert{
+    display:none;
+    visibility: hidden;
+}
+
+/* Accessibility: bigger fonts for the placeholders */
+input[placeholder], select[placeholder], textarea[placeholder], input[value], select {
+    font-size: 1.25em !important;
+}
+
+/* Color ratio and zoom over link*/
+.magnify{
+    color: #175e9b;/*for contrast ratio*/
+}
