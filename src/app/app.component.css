@@ -29,37 +29,6 @@ div.fontChangeFeature{
     flex-grow:1;
 }
 
-.accessibilityFeatures{
-    background-color: lightgrey;
-    font-size: 2em !important;    
-    text-align: center !important;   
-}
-
-.fontOption{
-    font-size: 1em !important;
-}
-
-.logo{
-    text-align:center;
-    padding: 0.5em !important; 
-    background-image: linear-gradient(lightgrey,white);
-}
-/*
-
-/* Spacing between text above dropdown and dropdown*/
-.fontSelectionText{
-    margin-bottom: 0.5em;
-}
-
-/*
-.fontSizeChange{
-    text-align: center;    
-}
-*/
-
-.magnify:hover{
-    transform: scale(1.1);
-}
 
 #title{
     text-align: center;

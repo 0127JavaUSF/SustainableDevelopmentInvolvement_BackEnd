@@ -6,4 +6,13 @@ body{
     color: #474c55;
 }
 
+.alert.alert-success{
+    background-color: lightblue;
+}
 
+
+.logo{
+    text-align:center;
+    padding: 0.5em !important; 
+    background-image: linear-gradient(lightblue,white);
+}
