@@ -14,22 +14,20 @@ describe('New Project Declaration', function() {
         browser.driver.findElement(By.id("submit_new_project_data")).click();
         browser.driver.sleep(5000);
 
+        //checking on the presence of the successful database update message.        
+        let e22TestElement = browser.driver.findElement(by.id("succesfulDatabaseUpdateMessage"));
+        let textInElement = e22TestElement.getText();
+        expect(textInElement).toBe("SUCCESS:Database update.");
+
         //Going back to the home page to check, then to the page diplaying all the projects
         browser.driver.get("http://localhost:4200/");
         browser.driver.get("http://localhost:4200/all-projects");
         browser.driver.sleep(5000);
 
-        let e2etestElement = browser.driver.findElement(by.id("e2eNewProjectTest"));
-        let textInElement = e2etestElement.getText();
+        e22TestElement = browser.driver.findElement(by.id("e2eNewProjectTest"));
+        textInElement = e22TestElement.getText();
         expect(textInElement).toBe("Project name_e2e testProject description_e2e test8Project url_e2e testProject comments_e2e test");
         
-          
-        //Looking for the text displayed on the Search Button of the Drivers page        
-        //let elDriverPageSearchButton = browser.driver.findElement(By.id("driversListHeading"));
-        //let text_function = elDriverPageSearchButton.getText(); 
-               
-        //expect(text_function).toBe("Drivers List");
-        
     });
-    
+
 });
