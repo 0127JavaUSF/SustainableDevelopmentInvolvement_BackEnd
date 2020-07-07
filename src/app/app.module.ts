@@ -10,6 +10,7 @@ import { CreateProjectContributionComponent } from './components/create-project-
 import { NewProjectComponent } from './components/new-project/new-project.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AllProjectsComponent } from './components/all-projects/all-projects.component';
 
 
 
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NewProjectComponent,
     LandingPageComponent,
     PageNotFoundComponent,
+    AllProjectsComponent,
   ],
   imports: [
     BrowserModule,

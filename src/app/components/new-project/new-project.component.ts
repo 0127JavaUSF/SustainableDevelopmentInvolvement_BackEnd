@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoalService } from 'src/app/services/goals.service';
-import { ProjectService } from 'src/app/services/project.service';
+import { ProjectService } from 'src/app/services/projects.service';
 import { Observable } from 'rxjs';
 import { Project } from 'src/app/models/Project';
 import { Router} from '@angular/router';
@@ -21,7 +21,8 @@ export class NewProjectComponent implements OnInit {
   private description:string;
   private comments:string;
   private url:string;
-  private goal_Id:number;
+  private goal_id:number;
+  
 
 
   ngOnInit() {
@@ -39,7 +40,8 @@ export class NewProjectComponent implements OnInit {
     project.description = this.description;
     project.comments = this.comments;
     project.url = this.url;
-    project.goal_Id = this.goal_Id;
+    project.goal_id = this.goal_id;
+    
 
     console.log("project in createProjectReference",project);
 

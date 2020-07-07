@@ -4,6 +4,7 @@ export class Project {
     public description: string="";
     public url: string="";
     public comments: string="";
-    public goal_Id: number=0;
+    public goal_id: number=0;
+    public goal_name: string="";
 
 }
