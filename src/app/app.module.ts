@@ -11,6 +11,7 @@ import { NewProjectComponent } from './components/new-project/new-project.compon
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AllProjectsComponent } from './components/all-projects/all-projects.component';
+import { AllInvolvementsComponent } from './components/all-involvements/all-involvements.component';
 
 
 
@@ -22,6 +23,7 @@ import { AllProjectsComponent } from './components/all-projects/all-projects.com
     LandingPageComponent,
     PageNotFoundComponent,
     AllProjectsComponent,
+    AllInvolvementsComponent,
   ],
   imports: [
     BrowserModule,

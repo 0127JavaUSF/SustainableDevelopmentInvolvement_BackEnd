@@ -16,3 +16,7 @@ body{
     padding: 0.5em !important; 
     background-image: linear-gradient(lightblue,white);
 }
+
+tr > th{
+    text-align: center !important;
+}

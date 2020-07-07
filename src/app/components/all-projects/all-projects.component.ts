@@ -20,10 +20,7 @@ export class AllProjectsComponent implements OnInit, DoCheck {
      this.projectService.getAllProjects().subscribe(
         data => (this.allProjectsResults = data),
         error=> (console.log("Received an error in the observable to get all projects: "+error))
-    );
-    
-    
-   
+    );   
   }
 
   createE2eTestString(){
