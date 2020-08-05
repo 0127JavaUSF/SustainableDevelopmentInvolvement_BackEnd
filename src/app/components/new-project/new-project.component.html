@@ -3,7 +3,7 @@
 <form>
     <div class="row">
         <div class="col">
-            <input type="text" aria-label="Input field for the project name."
+            <input id="project_name" type="text" aria-label="Input field for the project name."
                 class="form-control" placeholder="Project name" [(ngModel)]="name"  name="name"
                 aria-placeholder="Project name"/>
         </div>
@@ -15,16 +15,16 @@
     </div>
     <div class="row">
         <div class="col">
-            <select class="custom-dropdown" [(ngModel)]="goal_Id" name="goal_Id" 
+            <select class="custom-dropdown" [(ngModel)]="goal_id" name="goal_id" 
             aria-label="Drop-down list used to select a type of sustaianable development goal."
             aria-placeholder="Type of sustainable development goal" required>                
-                <option *ngFor="let result of goalsResults" value={{result.id}}>{{result.goalName}} </option>                
+                <option class="goalDropdownItem"  *ngFor="let result of goalsResults" value={{result.id}}>{{result.goalName}} </option>                
             </select>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <textarea  aria-label="Input field for the project description." rows="8"
+            <textarea  id="project_description" aria-label="Input field for the project description." rows="8"
                 class="form-control" placeholder="Project description" 
                 [(ngModel)]="description" name="description"
                 aria-placeholder="Project description"
@@ -34,7 +34,7 @@
 
     <div class="row">
         <div class="col">
-            <input type="text" aria-label="Input field for the project url."
+            <input id="project_url" type="text" aria-label="Input field for the project url."
                 class="form-control" placeholder="Project url"
                 [(ngModel)]="url" name="url" aria-placeholder="Project url"/>
         </div>
@@ -42,7 +42,7 @@
 
     <div class="row">
         <div class="col">
-            <textarea aria-label="Input field for the comments concerning the project" rows="8" class="form-control" placeholder="Comments concerning the project"
+            <textarea id="project_comments" aria-label="Input field for the comments concerning the project" rows="8" class="form-control" placeholder="Comments concerning the project"
                 class="form-control" placeholder="Comments concerning the project."
                 [(ngModel)]="comments" name="comments" aria-placeholder="Comments concerning the project."
                 ></textarea>
@@ -50,7 +50,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <input type="submit" 
+            <input id="submit_new_project_data" type="submit" 
             aria-label="Button to click on to submit the new sustainable development project data"
             value="Click to submit the data" (click)="createProjectReference($event)">             
         </div>

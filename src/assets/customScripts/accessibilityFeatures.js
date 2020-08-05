@@ -4,5 +4,5 @@ function changeFontSize(number){
     fontSizePercentage = fontSizePercentage + number;
     let bodyElement = document.getElementsByTagName("body")[0];
     style = `font-size: ${fontSizePercentage}% !important;`;
-    bodyElement.setAttribute("style",style)
+    bodyElement.style.setProperty("font-size", `${fontSizePercentage}%`,"important");
 }

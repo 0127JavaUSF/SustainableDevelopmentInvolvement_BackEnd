@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {ProjectService} from 'src/app/services/project.service';
-import {EmployeeProfile} from 'src/app/models/EmployeeProfile';
+import {ProjectService} from 'src/app/services/projects.service';
+import {EmployeeInvolvement} from 'src/app/models/EmployeeInvolvement';
 import { EmployeeService} from 'src/app/services/employee.service';
 
 
@@ -21,10 +21,10 @@ export class CreateProjectContributionComponent implements OnInit {
   newEmployeeInvolvementSubmissionResult:any;
   firstName:string;
   lastName:string;
-  project_Id:number;
+  projectId:number;
 
   ngOnInit() {
-    this.projectService.getAllProjects().subscribe(
+    this.projectService.getAllProjects().then(
         data => {this.allProjectsResults = data;},         
         error => {const test = 0;}
     );
@@ -37,10 +37,10 @@ export class CreateProjectContributionComponent implements OnInit {
   }
 
   createProjectContribution(){
-    let employeeProfile = new EmployeeProfile()
+    let employeeProfile = new EmployeeInvolvement()
     employeeProfile.firstName = this.firstName;
     employeeProfile.lastName = this.lastName;
-    employeeProfile.project_Id = this.project_Id;
+    employeeProfile.projectId = this.projectId;
 
     console.log("employeeProfile", employeeProfile);
 
@@ -49,7 +49,7 @@ export class CreateProjectContributionComponent implements OnInit {
         error => {const test=0;}
     );
 
-    document.getElementsByClassName("closeAlert")[0].setAttribute("style","display:block;");
+    document.getElementsByClassName("closeAlert")[0].setAttribute("style","display:block;visibility:visible;");
 
     this.router.navigate(['']);
 

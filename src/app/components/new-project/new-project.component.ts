@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GoalService } from 'src/app/services/goals.service';
-import { ProjectService } from 'src/app/services/project.service';
-import { Observable } from 'rxjs';
+import { ProjectService } from 'src/app/services/projects.service';
 import { Project } from 'src/app/models/Project';
 import { Router} from '@angular/router';
+import { Goal } from 'src/app/models/Goal';
 
 @Component({
   selector: 'app-new-project',
@@ -14,21 +14,23 @@ export class NewProjectComponent implements OnInit {
 
   constructor(private goalService:GoalService, private projectService:ProjectService, private router:Router) { }
 
-  private goalsResults:any
-  private projectResults:any;
+  private goalsResults:Array<Goal>;
+  private projectResults:Array<Project>;
   private id:number;
   private name:string;
   private description:string;
   private comments:string;
   private url:string;
-  private goal_Id:number;
+  private goal_id:number;
+  
 
 
   ngOnInit() {
-    this.goalService.getAllGoals().subscribe(
-      data => {this.goalsResults = data;},
-      error => {const test=0;}
-    );
+    console.log("Entering ngOnInit");
+    this.goalService.getAllGoals().then(
+      (data:Array<Goal>) => {console.log("Retrieving the goal data and assigning value to this.goalsResults");this.goalsResults = data;} ,
+      (error) => {console.log("Error during getAllGoals()", JSON.stringify(error))}
+      );
     
   }
 
@@ -39,7 +41,8 @@ export class NewProjectComponent implements OnInit {
     project.description = this.description;
     project.comments = this.comments;
     project.url = this.url;
-    project.goal_Id = this.goal_Id;
+    project.goal_id = this.goal_id;
+    
 
     console.log("project in createProjectReference",project);
 
@@ -49,7 +52,7 @@ export class NewProjectComponent implements OnInit {
     );
     this.router.navigate(['/new-project-contribution']);
 
-    document.getElementsByClassName('closeAlert')[0].setAttribute("style","display:block;");
+    document.getElementsByClassName('closeAlert')[0].setAttribute("style","display:block;visibility:visible;");
   }
 
 }
