@@ -18,8 +18,9 @@ export class EmployeeService {
       return this.http.post(`${this.base_url}/employees`,employeeProfile);
   }
 
-  getAllInvolvements():Observable<any>{
-    let results = this.http.get(`${this.base_url}/employees`);    
-    return results;
+  getAllInvolvedUsers():Promise<any>{
+    return this.http.get(`${this.base_url}/employees`).toPromise();    
+    //console.log("Service: getAllInvolvements: "+results); //Not a function error solved by removing those lines.
+    //return results;
   }
 }

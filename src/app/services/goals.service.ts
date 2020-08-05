@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { SD_StringExternalisation } from '../models/StringExternalisation';
+import { Goal } from '../models/Goal';
 
 
 @Injectable({
@@ -14,8 +14,9 @@ export class GoalService {
   private  stringExternalisation  = new SD_StringExternalisation();
   private base_url = this.stringExternalisation.base_url;
 
-  getAllGoals(): Observable<any>{
-      return this.http.get(`${this.base_url}/goals`);
-
+  async getAllGoals(): Promise<any>{
+    console.log("Inside getAllGoals()");
+    let promise = await this.http.get(`${this.base_url}/goals`).toPromise();
+    return promise;
   }
 }

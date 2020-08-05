@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { GoalService } from 'src/app/services/goals.service';
 import { ProjectService } from 'src/app/services/projects.service';
-import { Observable } from 'rxjs';
 import { Project } from 'src/app/models/Project';
 import { Router} from '@angular/router';
+import { Goal } from 'src/app/models/Goal';
 
 @Component({
   selector: 'app-new-project',
@@ -14,8 +14,8 @@ export class NewProjectComponent implements OnInit {
 
   constructor(private goalService:GoalService, private projectService:ProjectService, private router:Router) { }
 
-  private goalsResults:any
-  private projectResults:any;
+  private goalsResults:Array<Goal>;
+  private projectResults:Array<Project>;
   private id:number;
   private name:string;
   private description:string;
@@ -26,10 +26,11 @@ export class NewProjectComponent implements OnInit {
 
 
   ngOnInit() {
-    this.goalService.getAllGoals().subscribe(
-      data => {this.goalsResults = data;},
-      error => {const test=0;}
-    );
+    console.log("Entering ngOnInit");
+    this.goalService.getAllGoals().then(
+      (data:Array<Goal>) => {console.log("Retrieving the goal data and assigning value to this.goalsResults");this.goalsResults = data;} ,
+      (error) => {console.log("Error during getAllGoals()", JSON.stringify(error))}
+      );
     
   }
 

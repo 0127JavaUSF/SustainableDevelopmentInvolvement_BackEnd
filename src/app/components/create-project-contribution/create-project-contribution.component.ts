@@ -24,7 +24,7 @@ export class CreateProjectContributionComponent implements OnInit {
   projectId:number;
 
   ngOnInit() {
-    this.projectService.getAllProjects().subscribe(
+    this.projectService.getAllProjects().then(
         data => {this.allProjectsResults = data;},         
         error => {const test = 0;}
     );

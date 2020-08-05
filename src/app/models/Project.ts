@@ -5,6 +5,5 @@ export class Project {
     public url: string="";
     public comments: string="";
     public goal_id: number=0;
-    public goal_name: string="";
 
 }

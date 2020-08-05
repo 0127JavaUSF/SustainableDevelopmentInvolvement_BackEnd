@@ -13,12 +13,13 @@ export class ProjectService {
   private  stringExternalisation  = new SD_StringExternalisation();
   private base_url = this.stringExternalisation.base_url; 
   
-  createProjectReference(project:Object): Observable<Object>{
+  createProjectReference(project:Object): Observable<any>{
     return this.http.post(`${this.base_url}/projects`, project );
   }
 
-  getAllProjects():Observable<any>{
-    return this.http.get(`${this.base_url}/projects`);
+  async getAllProjects():Promise<any>{
+     let promise = await this.http.get(`${this.base_url}/projects`).toPromise();
+     return promise;
   }
 
   getProjectById(id:number){
